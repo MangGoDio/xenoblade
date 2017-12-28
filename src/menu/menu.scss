@@ -1,0 +1,33 @@
+.menu {
+    .nav {
+        width: 200px;
+        margin: 20px;
+        text-align: center;
+        font-size: 18px;
+        >li {
+            padding: 10px;
+            cursor: pointer;
+            &:hover {
+                background: #c0392b;
+            }
+        }
+    }
+}
+
+.select {
+    display: flex;
+    width: 240px;
+    padding: 0 20px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    >li {
+        padding: 3px 10px;
+        margin: 2px;
+        font-size: 14px;
+        background: rgba(255, 255, 255, .15);
+        cursor: pointer;
+        &:hover {
+            background: #c0392b;
+        }
+    }
+}
