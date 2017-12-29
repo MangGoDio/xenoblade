@@ -3,9 +3,9 @@ import { Select } from './select'
 import './menu.scss'
 
 const config = [
-    { id: 'all', name: '物品一览' },
     { id: 'blade', name: '查询喜好' },
     { id: 'town', name: '查询城镇' },
+    { id: 'all', name: '物品一览' },
 ]
 
 export const Menu = props =>

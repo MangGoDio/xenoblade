@@ -10,7 +10,7 @@ class App extends React.Component {
     constructor(...props) {
         super(...props)
         this.state = {
-            menu: 'all',
+            menu: 'blade',
             name: '',
         }
         this.changeMenu = this.changeMenu.bind(this)

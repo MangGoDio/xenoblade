@@ -19,6 +19,7 @@ export const Blade = props => {
                         <td>{item.name}</td>
                         <td>{item.town}</td>
                         <td>{item.class}</td>
+                        <td>{item.desc}</td>
                     </tr>)}
                 </tbody>
             </table>
