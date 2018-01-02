@@ -12,23 +12,23 @@ class App extends React.Component {
         this.state = {
             menu: 'blade',
             name: '',
+            type: '',
         }
         this.changeMenu = this.changeMenu.bind(this)
         this.onSelect = this.onSelect.bind(this)
     }
 
     changeMenu(menu) {
-        this.setState({ menu })
+        this.setState({ menu, name: '' })
     }
 
-    onSelect(name) {
-        console.log(name)
-        this.setState({ name })
+    onSelect(name, type) {
+        this.setState({ name, type })
     }
 
     render() {
 
-        const { menu, name } = this.state,
+        const { menu, name, type } = this.state,
             Content = (() => {
                 switch (menu) {
                     case 'all':
@@ -38,7 +38,7 @@ class App extends React.Component {
                         return <Blade name={name} />
                             ; break
                     case 'town':
-                        return <Town />
+                        return <Town name={name} type={type} />
                             ; break
                 }
             })

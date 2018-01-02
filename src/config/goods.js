@@ -4,12 +4,12 @@ export const _GOODS = {
         '主食': {
             buff: '战斗经验值提升10%',
             goods: [
-                { name: '阿伐利提亚什锦面', desc: '仅限晚上出售', },
-                { name: '多汁包子', desc: '完成彭诺回家支线开启', },
-                { name: '弹弹炒饭', desc: '完成彭诺回家支线开启', },
-                { name: '巨大蘑菇派', desc: '完成彭诺回家支线开启', },
-                { name: '阳光包子', desc: '完成彭诺回家支线开启', need: true, },
-                { name: '美味香肠包', desc: '完成彭诺回家支线开启', need: true, },
+                { name: '阿伐利提亚什锦面', desc: '仅晚上出售，无关产权', },
+                { name: '多汁包子', },
+                { name: '弹弹炒饭', },
+                { name: '巨大蘑菇派', },
+                { name: '阳光包子', need: true, },
+                { name: '美味香肠包', need: true, },
             ]
         },
         '鱼': {

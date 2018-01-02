@@ -436,6 +436,129 @@ module.exports = emptyObject;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.initTown = exports.initBlade = exports.initAll = exports._TOWN = exports._NAME = exports.arrTown = undefined;
+
+var _goods = __webpack_require__(34);
+
+var _blade = __webpack_require__(35);
+
+var arrAll = [{ "town": "阿伐利提亚", "class": "主食", "name": "阿伐利提亚什锦面", "need": false, "desc": "仅晚上出售，无关产权" }, { "town": "阿伐利提亚", "class": "主食", "name": "多汁包子", "need": false, "blade": "虎" }, { "town": "阿伐利提亚", "class": "主食", "name": "弹弹炒饭", "need": false }, { "town": "阿伐利提亚", "class": "主食", "name": "巨大蘑菇派", "need": false, "blade": "韦驮天" }, { "town": "阿伐利提亚", "class": "主食", "name": "阳光包子", "need": true }, { "town": "阿伐利提亚", "class": "主食", "name": "美味香肠包", "need": true }, { "town": "阿伐利提亚", "class": "鱼", "name": "烤锚尾鱼", "need": false }, { "town": "阿伐利提亚", "class": "鱼", "name": "炒油牡蛎", "need": false }, { "town": "阿伐利提亚", "class": "鱼", "name": "糖醋海洋茶鱼", "need": false, "blade": "力男" }, { "town": "阿伐利提亚", "class": "甜点", "name": "迷情蜜瓜冰糕", "need": false, "blade": "花JD" }, { "town": "阿伐利提亚", "class": "甜点", "name": "诺彭彭卷", "need": false }, { "town": "阿伐利提亚", "class": "甜点", "name": "亮晶晶砂糖", "need": false }, { "town": "阿伐利提亚", "class": "甜点", "name": "纳西梨果冻", "need": false }, { "town": "阿伐利提亚", "class": "甜点", "name": "蜜豆牡丹饼", "need": true, "blade": "结" }, { "town": "阿伐利提亚", "class": "饮料", "name": "闪亮果汁", "need": false }, { "town": "阿伐利提亚", "class": "饮料", "name": "泡泡果汁", "need": false, "blade": "花JS" }, { "town": "阿伐利提亚", "class": "饮料", "name": "绵绵果汁", "need": false }, { "town": "阿伐利提亚", "class": "饮料", "name": "水苏菜", "need": false, "desc": "找齐十二兄弟刷新" }, { "town": "阿伐利提亚", "class": "饮料", "name": "蜂蜜牛奶", "need": false, "desc": "找齐十二兄弟刷新", "blade": "雷鼓" }, { "town": "阿伐利提亚", "class": "饮料", "name": "什锦冰沙", "need": false, "desc": "找齐十二兄弟刷新" }, { "town": "阿伐利提亚", "class": "乐器", "name": "圆圆沙锤", "need": false, "blade": "花JS" }, { "town": "阿伐利提亚", "class": "乐器", "name": "诺彭里里", "need": false }, { "town": "阿伐利提亚", "class": "乐器", "name": "欢乐康加鼓", "need": false }, { "town": "阿伐利提亚", "class": "乐器", "name": "吵闹竖笛", "need": false }, { "town": "阿伐利提亚", "class": "乐器", "name": "扭动响板", "need": true }, { "town": "阿伐利提亚", "class": "乐器", "name": "坚硬摇铃", "need": true }, { "town": "阿伐利提亚", "class": "书籍", "name": "简单打捞说明书", "need": false }, { "town": "阿伐利提亚", "class": "书籍", "name": "怪盗毛毛和黄金枪", "need": false }, { "town": "阿伐利提亚", "class": "书籍", "name": "千年阿鲁斯", "need": false }, { "town": "阿伐利提亚", "class": "书籍", "name": "玫拉姆森林冒险记", "need": true, "blade": "红莲" }, { "town": "阿伐利提亚", "class": "书籍", "name": "诺彭小姆尼于蒸汽镇", "need": true }, { "town": "阿伐利提亚", "class": "书籍", "name": "莫尔斯古文献第2卷", "need": false, "desc": "式的羁绊任务" }, { "town": "阿伐利提亚", "class": "桌游", "name": "卡卡岛", "need": false }, { "town": "阿伐利提亚", "class": "桌游", "name": "诺彭棋", "need": false }, { "town": "阿伐利提亚", "class": "桌游", "name": "秘密潜入", "need": false, "blade": "尼娅(异刃)" }, { "town": "阿伐利提亚", "class": "桌游", "name": "66号交易通道", "need": false }, { "town": "阿伐利提亚", "class": "桌游", "name": "珊瑚彭诺棋", "need": true }, { "town": "阿伐利提亚", "class": "桌游", "name": "利贝拉里塔斯的生活", "need": true, "blade": "式" }, { "town": "阿伐利提亚", "class": "化妆品", "name": "软绵古龙水", "need": false }, { "town": "阿伐利提亚", "class": "化妆品", "name": "润滑化妆水", "need": false }, { "town": "阿伐利提亚", "class": "化妆品", "name": "清爽凝胶水", "need": false }, { "town": "阿伐利提亚", "class": "化妆品", "name": "卷卷假睫毛", "need": false, "blade": "水分" }, { "town": "阿伐利提亚", "class": "化妆品", "name": "饱满指甲油", "need": false }, { "town": "阿伐利提亚", "class": "化妆品", "name": "绵密满月衬垫", "need": true }, { "town": "古拉", "class": "主食", "name": "卢斯卡团子", "need": false }, { "town": "古拉", "class": "主食", "name": "炖卢斯卡面", "need": false }, { "town": "古拉", "class": "主食", "name": "火腿番茄三明治", "need": false }, { "town": "古拉", "class": "主食", "name": "甜菜鱼肉飞饼", "need": false }, { "town": "古拉", "class": "主食", "name": "奶油橘味煎饼", "need": false, "blade": "尼娅(队友)" }, { "town": "古拉", "class": "主食", "name": "什锦卢斯卡面", "need": true }, { "town": "古拉", "class": "主食", "name": "幸运锦兰面包", "need": false, "desc": "重音羁绊任务" }, { "town": "古拉", "class": "蔬菜", "name": "快煎脆脆草", "need": false }, { "town": "古拉", "class": "蔬菜", "name": "托里格风味腌菜", "need": false, "blade": "式" }, { "town": "古拉", "class": "蔬菜", "name": "肉甜椒镶菜", "need": false, "blade": "伊吹" }, { "town": "古拉", "class": "蔬菜", "name": "脆叶包心菜色拉", "need": false }, { "town": "古拉", "class": "肉", "name": "星形肉排", "need": false, "blade": "红莲" }, { "town": "古拉", "class": "肉", "name": "甜甜小香肠", "need": false }, { "town": "古拉", "class": "肉", "name": "木豆酱炒肉", "need": true }, { "town": "古拉", "class": "肉", "name": "芥末酱香肠", "need": true }, { "town": "古拉", "class": "鱼", "name": "古拉鲣鱼干", "need": false }, { "town": "古拉", "class": "鱼", "name": "香煎金刚岩鱼", "need": false }, { "town": "古拉", "class": "鱼", "name": "二足蟹辣椒汤", "need": true }, { "town": "古拉", "class": "饮料", "name": "月光香蕉牛奶", "need": false, "blade": "天威" }, { "town": "古拉", "class": "饮料", "name": "古拉蜜蜂茶", "need": false }, { "town": "古拉", "class": "饮料", "name": "库克莱尔天然水", "need": false }, { "town": "古拉", "class": "饮料", "name": "牛奶朝气百香果", "need": true }, { "town": "古拉", "class": "饮料", "name": "胜利果冰", "need": true }, { "town": "古拉", "class": "乐器", "name": "托里格鲁特琴", "need": false, "blade": "七冰" }, { "town": "古拉", "class": "乐器", "name": "木纹阿尔卑斯长号", "need": false, "blade": "焰" }, { "town": "古拉", "class": "乐器", "name": "万年杉树古琴", "need": false, "blade": "白虎" }, { "town": "古拉", "class": "乐器", "name": "木琴", "need": true }, { "town": "古拉", "class": "乐器", "name": "珊瑚木琴", "need": true }, { "town": "古拉", "class": "美术品", "name": "丘陵上伫立的少女", "need": false }, { "town": "古拉", "class": "美术品", "name": "黑色花田", "need": false, "blade": "宫比罗" }, { "town": "古拉", "class": "美术品", "name": "巴恩的版画", "need": true }, { "town": "古拉", "class": "美术品", "name": "木雕烈王像", "need": true }, { "town": "古拉", "class": "化妆品", "name": "软软粉底", "need": false }, { "town": "古拉", "class": "化妆品", "name": "树枝护发素", "need": false }, { "town": "古拉", "class": "化妆品", "name": "风花梳子", "need": false, "blade": "花JD" }, { "town": "古拉", "class": "化妆品", "name": "海螺假发", "need": true, "blade": "石榴" }, { "town": "古拉", "class": "化妆品", "name": "雪花闪亮香水", "need": true, "blade": "伊吹" }, { "town": "古拉", "class": "纺织品", "name": "拼图木小包", "need": false }, { "town": "古拉", "class": "纺织品", "name": "托里格布垫子", "need": false }, { "town": "古拉", "class": "纺织品", "name": "树染缠腰布", "need": false, "blade": "朱雀" }, { "town": "古拉", "class": "纺织品", "name": "树叶光斑纹样的窗帘", "need": false }, { "town": "古拉", "class": "纺织品", "name": "镂空花纹的树叶头巾", "need": true, "blade": "萤" }, { "town": "古拉", "class": "纺织品", "name": "雪花边披肩", "need": true }, { "town": "弗雷斯贝古村庄", "class": "蔬菜", "name": "黑石榴果香肠", "need": false }, { "town": "弗雷斯贝古村庄", "class": "蔬菜", "name": "腌制火花烤串", "need": false }, { "town": "弗雷斯贝古村庄", "class": "蔬菜", "name": "水煮肌肉莲花", "need": true }, { "town": "弗雷斯贝古村庄", "class": "蔬菜", "name": "流水腌冰包心菜", "need": true }, { "town": "弗雷斯贝古村庄", "class": "饮料", "name": "深焙黑咖啡", "need": false, "blade": "时叶" }, { "town": "弗雷斯贝古村庄", "class": "饮料", "name": "赛利奥茶", "need": false, "blade": "焰" }, { "town": "弗雷斯贝古村庄", "class": "饮料", "name": "木豆奶昔", "need": false }, { "town": "弗雷斯贝古村庄", "class": "饮料", "name": "冒泡拉西", "need": true }, { "town": "弗雷斯贝古村庄", "class": "乐器", "name": "赤杆三味线", "need": false, "blade": "婆娑罗" }, { "town": "弗雷斯贝古村庄", "class": "乐器", "name": "冯斯低音提琴", "need": false, "blade": "时叶" }, { "town": "弗雷斯贝古村庄", "class": "乐器", "name": "豪杰竖琴", "need": false }, { "town": "弗雷斯贝古村庄", "class": "乐器", "name": "云卷贝阿贝鸠奈琴", "need": false }, { "town": "弗雷斯贝古村庄", "class": "乐器", "name": "珀彭大提琴", "need": true }, { "town": "弗雷斯贝古村庄", "class": "纺织品", "name": "佐鸣布发饰", "need": false }, { "town": "弗雷斯贝古村庄", "class": "纺织品", "name": "鳞甲兽皮角斗士", "need": false }, { "town": "弗雷斯贝古村庄", "class": "纺织品", "name": "珊瑚布毛巾", "need": false }, { "town": "弗雷斯贝古村庄", "class": "纺织品", "name": "绚烂图饰手帕", "need": false }, { "town": "弗雷斯贝古村庄", "class": "纺织品", "name": "古拉木羽衣", "need": false }, { "town": "弗雷斯贝古村庄", "class": "纺织品", "name": "佐鸣布结晶毯子", "need": false }, { "town": "英维迪亚首都", "class": "主食", "name": "薄饼包菜", "need": false }, { "town": "英维迪亚首都", "class": "主食", "name": "三味奶酪馅饼", "need": false }, { "town": "英维迪亚首都", "class": "主食", "name": "主任咖喱", "need": false, "blade": "KOSMOS" }, { "town": "英维迪亚首都", "class": "主食", "name": "热带芋馅饼", "need": true }, { "town": "英维迪亚首都", "class": "主食", "name": "足料香肠馅饼", "need": true }, { "town": "英维迪亚首都", "class": "肉", "name": "带骨鳞甲兽肉排", "need": false }, { "town": "英维迪亚首都", "class": "肉", "name": "兽肉细面", "need": false }, { "town": "英维迪亚首都", "class": "肉", "name": "酱烤铁板肉", "need": true }, { "town": "英维迪亚首都", "class": "肉", "name": "炭烤铁火鸟", "need": true, "blade": "八重切" }, { "town": "英维迪亚首都", "class": "鱼", "name": "兴奋翻车鱼干", "need": false, "blade": "白虎" }, { "town": "英维迪亚首都", "class": "鱼", "name": "薄切大佬金枪雪花鱼片", "need": false }, { "town": "英维迪亚首都", "class": "鱼", "name": "清蒸蓝腮太阳鱼", "need": true }, { "town": "英维迪亚首都", "class": "鱼", "name": "冰鱼烤坚果肉", "need": true }, { "town": "英维迪亚首都", "class": "甜点", "name": "胜利吉事果", "need": false, "desc": "小卖车出售，不计入产权" }, { "town": "英维迪亚首都", "class": "甜点", "name": "苦味巧克力", "need": false, "desc": "小卖车出售，不计入产权" }, { "town": "英维迪亚首都", "class": "甜点", "name": "彩虹冰糕", "need": false }, { "town": "英维迪亚首都", "class": "甜点", "name": "花香巴伐利亚奶羹", "need": false, "blade": "石榴" }, { "town": "英维迪亚首都", "class": "甜点", "name": "羽衣桃羊羹", "need": true }, { "town": "英维迪亚首都", "class": "美术品", "name": "喜剧王的雕刻", "need": false }, { "town": "英维迪亚首都", "class": "美术品", "name": "最后的合唱", "need": false, "blade": "光" }, { "town": "英维迪亚首都", "class": "美术品", "name": "唱圣歌的圣女像", "need": true }, { "town": "英维迪亚首都", "class": "美术品", "name": "升天的阿鲁斯", "need": true }, { "town": "英维迪亚首都", "class": "书籍", "name": "幽界神话戏曲", "need": false }, { "town": "英维迪亚首都", "class": "书籍", "name": "塞洛斯亚公爵传记", "need": false }, { "town": "英维迪亚首都", "class": "书籍", "name": "幽界美术名画全集", "need": true }, { "town": "英维迪亚首都", "class": "书籍", "name": "阿德尔初恋战纪", "need": true }, { "town": "英维迪亚首都", "class": "桌游", "name": "阶级扑克牌", "need": false }, { "town": "英维迪亚首都", "class": "桌游", "name": "剑斗士相扑", "need": false, "blade": "KOSMOS" }, { "town": "英维迪亚首都", "class": "桌游", "name": "珊瑚黑白棋", "need": false, "blade": "莱克斯" }, { "town": "英维迪亚首都", "class": "桌游", "name": "宝石航线", "need": false }, { "town": "英维迪亚首都", "class": "桌游", "name": "诺彭彭庭院", "need": false }, { "town": "英维迪亚首都", "class": "桌游", "name": "珊瑚纸牌", "need": false }, { "town": "英维迪亚首都", "class": "化妆品", "name": "蛋白珊瑚口红", "need": false, "blade": "蓟" }, { "town": "英维迪亚首都", "class": "化妆品", "name": "阿鲁斯油护手霜", "need": false, "blade": "伽具土" }, { "town": "英维迪亚首都", "class": "化妆品", "name": "黄金睫毛膏", "need": false }, { "town": "英维迪亚首都", "class": "化妆品", "name": "美丽胭脂", "need": true }, { "town": "英维迪亚首都", "class": "化妆品", "name": "弥先珊瑚唇彩", "need": true }, { "town": "斯佩比亚", "class": "蔬菜", "name": "海豚苦瓜夹肉", "need": false }, { "town": "斯佩比亚", "class": "蔬菜", "name": "黄昏炭火烤串", "need": false }, { "town": "斯佩比亚", "class": "蔬菜", "name": "爽口温菜色拉", "need": true }, { "town": "斯佩比亚", "class": "蔬菜", "name": "蒸汽雪花凉拌色拉", "need": true, "blade": "蓟" }, { "town": "斯佩比亚", "class": "肉", "name": "兽肉木豆烤串", "need": false }, { "town": "斯佩比亚", "class": "肉", "name": "香草生肉奶油粥", "need": false }, { "town": "斯佩比亚", "class": "肉", "name": "蒸汽铁火鸟", "need": false }, { "town": "斯佩比亚", "class": "肉", "name": "星形炸肉排", "need": false }, { "town": "斯佩比亚", "class": "肉", "name": "木豆煮鳞甲兽肉", "need": false }, { "town": "斯佩比亚", "class": "肉", "name": "炸肉排", "need": false, "blade": "梅勒芙" }, { "town": "斯佩比亚", "class": "鱼", "name": "香烤沙鲑", "need": false }, { "town": "斯佩比亚", "class": "鱼", "name": "云海蟹奶油土豆饼", "need": false, "blade": "光" }, { "town": "斯佩比亚", "class": "鱼", "name": "甜醋沙鲑", "need": true }, { "town": "斯佩比亚", "class": "鱼", "name": "香味干金枪鱼头汤", "need": true, "blade": "玛瑙" }, { "town": "斯佩比亚", "class": "甜点", "name": "蒸汽奶味面包", "need": false }, { "town": "斯佩比亚", "class": "甜点", "name": "蒸汽宝石冰", "need": false }, { "town": "斯佩比亚", "class": "甜点", "name": "木豆大福团子", "need": false }, { "town": "斯佩比亚", "class": "甜点", "name": "满天宝石挞", "need": true, "blade": "花JK" }, { "town": "斯佩比亚", "class": "甜点", "name": "迪法露果胶挞", "need": true }, { "town": "斯佩比亚", "class": "甜点", "name": "热红宝石蒸汽面包", "need": true }, { "town": "斯佩比亚", "class": "乐器", "name": "铜管小号", "need": false }, { "town": "斯佩比亚", "class": "乐器", "name": "蒸汽管风琴", "need": false, "blade": "七冰" }, { "town": "斯佩比亚", "class": "乐器", "name": "军队中提琴", "need": false }, { "town": "斯佩比亚", "class": "乐器", "name": "金属小鼓", "need": false, "blade": "雷鼓" }, { "town": "斯佩比亚", "class": "乐器", "name": "管木琴", "need": true }, { "town": "斯佩比亚", "class": "乐器", "name": "冰柱马林巴", "need": true }, { "town": "斯佩比亚", "class": "美术品", "name": "朋克人偶", "need": false }, { "town": "斯佩比亚", "class": "美术品", "name": "艾菲姆的铜像", "need": false, "blade": "凛音" }, { "town": "斯佩比亚", "class": "美术品", "name": "斯佩比亚熊木雕", "need": false, "blade": "尼娅(队友)" }, { "town": "斯佩比亚", "class": "美术品", "name": "妖精菲尔梅莉的雕像", "need": true, "blade": "重音" }, { "town": "斯佩比亚", "class": "美术品", "name": "海螺八音盒", "need": true }, { "town": "斯佩比亚", "class": "书籍", "name": "斯佩比亚帝国军兵器图鉴", "need": false }, { "town": "斯佩比亚", "class": "书籍", "name": "皇帝艾非姆战纪", "need": false }, { "town": "斯佩比亚", "class": "书籍", "name": "帝国秘密温泉一日游", "need": false, "blade": "雄黄" }, { "town": "斯佩比亚", "class": "书籍", "name": "假肢阿乔的悲惨世界", "need": false, "blade": "玛瑙" }, { "town": "斯佩比亚", "class": "书籍", "name": "纯白之恋~穿越雪原~", "need": false }, { "town": "斯佩比亚", "class": "书籍", "name": "诺彭能发战争财吗？", "need": true }, { "town": "斯佩比亚", "class": "桌游", "name": "军事区域", "need": false, "blade": "纽兹" }, { "town": "斯佩比亚", "class": "桌游", "name": "管桩积木", "need": false }, { "town": "斯佩比亚", "class": "桌游", "name": "秘密裁决", "need": false }, { "town": "斯佩比亚", "class": "桌游", "name": "决斗王国", "need": false }, { "town": "斯佩比亚", "class": "桌游", "name": "交涉王国", "need": true }, { "town": "斯佩比亚", "class": "桌游", "name": "水管工逃脱游戏", "need": true }, { "town": "洛修利亚", "class": "主食", "name": "熔岩馅饼", "need": false, "blade": "绵津见" }, { "town": "洛修利亚", "class": "主食", "name": "奥托燕麦粥", "need": false }, { "town": "洛修利亚", "class": "主食", "name": "蛋黄酱烤章鱼", "need": false, "blade": "彩歌" }, { "town": "洛修利亚", "class": "主食", "name": "果肉包", "need": true, "blade": "月" }, { "town": "洛修利亚", "class": "主食", "name": "铁火肉排盖浇饭", "need": true }, { "town": "洛修利亚", "class": "蔬菜", "name": "炖蔬菜浓汤", "need": false, "blade": "星织" }, { "town": "洛修利亚", "class": "蔬菜", "name": "英雄阿德尔烤饼", "need": false, "blade": "齐格" }, { "town": "洛修利亚", "class": "蔬菜", "name": "香脆冰雪酱瓜", "need": false, "blade": "鸣" }, { "town": "洛修利亚", "class": "蔬菜", "name": "粉雪粉叶草软冻", "need": false }, { "town": "洛修利亚", "class": "蔬菜", "name": "雪醋淋冰包心菜", "need": true, "blade": "婆娑罗" }, { "town": "洛修利亚", "class": "鱼", "name": "慢火煎芬芳虾", "need": false, "blade": "宫比罗" }, { "town": "洛修利亚", "class": "鱼", "name": "烤全深渊蝶鲨", "need": false, "blade": "朱雀" }, { "town": "洛修利亚", "class": "鱼", "name": "热牡蛎卷", "need": true }, { "town": "洛修利亚", "class": "鱼", "name": "冰鱼包子浓汤", "need": true }, { "town": "洛修利亚", "class": "甜点", "name": "轻飘飘雪花冰霜", "need": false }, { "town": "洛修利亚", "class": "甜点", "name": "融雪千层饼", "need": false, "blade": "伽具土" }, { "town": "洛修利亚", "class": "甜点", "name": "烤炉钠夕立", "need": false }, { "town": "洛修利亚", "class": "甜点", "name": "高级雪花奶酪蛋糕", "need": false, "blade": "水分" }, { "town": "洛修利亚", "class": "甜点", "name": "迪法路宾治", "need": true }, { "town": "洛修利亚", "class": "甜点", "name": "饼雪团子", "need": true, "blade": "萤" }, { "town": "洛修利亚", "class": "美术品", "name": "古代王肖像", "need": false }, { "town": "洛修利亚", "class": "美术品", "name": "雪花水晶壶", "need": false, "blade": "齐格" }, { "town": "洛修利亚", "class": "美术品", "name": "隐匿勇者嘉拉德的肖像画", "need": false, "blade": "八重切" }, { "town": "洛修利亚", "class": "美术品", "name": "丘陵上伫立的少女", "need": false }, { "town": "洛修利亚", "class": "美术品", "name": "最后的合唱", "need": false, "blade": "光" }, { "town": "洛修利亚", "class": "书籍", "name": "与荣耀共行", "need": false }, { "town": "洛修利亚", "class": "书籍", "name": "鳞甲兽的感情", "need": false }, { "town": "洛修利亚", "class": "书籍", "name": "铠虾座的证人", "need": false }, { "town": "洛修利亚", "class": "书籍", "name": "英雄阿德尔的历史", "need": false }, { "town": "洛修利亚", "class": "书籍", "name": "暴风雪中的圣歌队", "need": true }, { "town": "洛修利亚", "class": "书籍", "name": "天文占卜大辞典", "need": true, "blade": "重音" }, { "town": "洛修利亚", "class": "书籍", "name": "耽美绅士之书", "need": false, "desc": "协助执笔支线，无关产权" }, { "town": "洛修利亚", "class": "桌游", "name": "意外之失", "need": false, "blade": "宇迦" }, { "town": "洛修利亚", "class": "桌游", "name": "吹牛之夜", "need": false }, { "town": "洛修利亚", "class": "桌游", "name": "再见了金钱", "need": false }, { "town": "洛修利亚", "class": "桌游", "name": "雪原的诺彭强盗", "need": true, "blade": "力男" }, { "town": "洛修利亚", "class": "桌游", "name": "宝石台球", "need": true, "blade": "天威" }, { "town": "洛修利亚", "class": "化妆品", "name": "暖暖油", "need": false }, { "town": "洛修利亚", "class": "化妆品", "name": "巧克力眼影", "need": false }, { "town": "洛修利亚", "class": "化妆品", "name": "星月唇膏", "need": false, "blade": "彩歌" }, { "town": "洛修利亚", "class": "化妆品", "name": "诺彭尾指甲油", "need": false }, { "town": "洛修利亚", "class": "化妆品", "name": "蒸汽粉底", "need": false }, { "town": "洛修利亚", "class": "纺织品", "name": "洛修利亚天鹅绒", "need": false }, { "town": "洛修利亚", "class": "纺织品", "name": "雪花纹步鞋垫", "need": false }, { "town": "洛修利亚", "class": "纺织品", "name": "玄武纹棉布", "need": false, "blade": "花JK" }, { "town": "洛修利亚", "class": "纺织品", "name": "热条纹布", "need": false }, { "town": "洛修利亚", "class": "纺织品", "name": "五线谱花纹发夹", "need": true }, { "town": "洛修利亚", "class": "纺织品", "name": "托里格雪花围巾", "need": true, "blade": "结" }, { "town": "弥先村", "class": "蔬菜", "name": "里贝利亚杂烩汤", "need": false }, { "town": "弥先村", "class": "蔬菜", "name": "绿奶酪色拉", "need": false }, { "town": "弥先村", "class": "蔬菜", "name": "烤蔬菜千层饼", "need": false }, { "town": "弥先村", "class": "蔬菜", "name": "温蔬菜煎牡蛎", "need": true }, { "town": "弥先村", "class": "蔬菜", "name": "雪孩子土豆色拉", "need": true, "blade": "尼娅(异刃)" }, { "town": "弥先村", "class": "肉", "name": "鸵羽兽肉煎饺", "need": false }, { "town": "弥先村", "class": "肉", "name": "叠烤白培根", "need": false }, { "town": "弥先村", "class": "肉", "name": "甜味红烧鳞甲兽排骨肉", "need": false }, { "town": "弥先村", "class": "肉", "name": "活力炒电击里脊肉", "need": false, "blade": "纽兹" }, { "town": "弥先村", "class": "肉", "name": "香味包子奶油浓汤", "need": true }, { "town": "弥先村", "class": "肉", "name": "薄饼杂炒", "need": true }, { "town": "弥先村", "class": "鱼", "name": "煮独刺鱼", "need": false }, { "town": "弥先村", "class": "鱼", "name": "煎拍水大虾", "need": false }, { "town": "弥先村", "class": "鱼", "name": "炙烤云海蟹", "need": false }, { "town": "弥先村", "class": "鱼", "name": "火炙冰鱼花胡桃", "need": false }, { "town": "弥先村", "class": "鱼", "name": "蜜青将鱼", "need": false }, { "town": "弥先村", "class": "饮料", "name": "迪法露", "need": false }, { "town": "弥先村", "class": "饮料", "name": "阿卡狄亚茶", "need": false, "blade": "凛音" }, { "town": "弥先村", "class": "饮料", "name": "冰霜迪法露", "need": false, "blade": "韦驮天" }, { "town": "弥先村", "class": "饮料", "name": "水管吸管果冰霜", "need": true }, { "town": "弥先村", "class": "饮料", "name": "鳞甲兽奶柠檬茶", "need": true }, { "town": "弥先村", "class": "美术品", "name": "月光花环", "need": false }, { "town": "弥先村", "class": "美术品", "name": "莫特科拉人偶", "need": false, "blade": "绵津见" }, { "town": "弥先村", "class": "美术品", "name": "钢管海翼龙", "need": false }, { "town": "弥先村", "class": "美术品", "name": "嫩绿月光面具", "need": false }, { "town": "弥先村", "class": "纺织品", "name": "水母凤仙花绒毯", "need": false }, { "town": "弥先村", "class": "纺织品", "name": "曼陀罗花纹门帘", "need": false }, { "town": "弥先村", "class": "纺织品", "name": "辟魔曼陀罗毛巾", "need": false }, { "town": "弥先村", "class": "纺织品", "name": "镂空披肩", "need": false, "blade": "虎" }, { "town": "弥先村", "class": "纺织品", "name": "彭诺斗篷", "need": true }, { "town": "弥先村", "class": "纺织品", "name": "镂空花纹头饰", "need": true }, { "town": "异刃技能", "class": "焰的料理", "name": "托里格风味塔尔塔里烤鱼", "need": false, "blade": "莱克斯" }, { "town": "异刃技能", "class": "焰的料理", "name": "三色丸子", "need": false, "blade": "宇迦" }, { "town": "异刃技能", "class": "月的冰雕", "name": "洛修利亚冰魔方", "need": false, "blade": "月" }, { "town": "异刃技能", "class": "鸣的纺织", "name": "王家羊毛", "need": false, "blade": "鸣" }, { "town": "异刃技能", "class": "雄黄的糕点", "name": "霓虹葡萄布丁", "need": false, "blade": "雄黄" }];
+
+var arrBlade = { "莱克斯": { "class": ["饮料", "美术品"], "goods": [{ "name": "托里格风味塔尔塔里烤鱼", "town": "异刃技能", "class": "焰的料理", "need": false }, { "name": "珊瑚黑白棋", "town": "英维迪亚首都", "class": "桌游", "need": false }] }, "焰": { "class": ["蔬菜", "书籍"], "goods": [{ "name": "赛利奥茶", "town": "弗雷斯贝古村庄", "class": "饮料", "need": false }, { "name": "木纹阿尔卑斯长号", "town": "古拉", "class": "乐器", "need": false }] }, "光": { "class": ["甜品", "美术品"], "goods": [{ "name": "云海蟹奶油土豆饼", "town": "斯佩比亚", "class": "鱼", "need": false }, { "name": "最后的合唱", "town": "英维迪亚首都", "class": "美术品", "need": false }, { "name": "最后的合唱", "town": "洛修利亚", "class": "美术品", "need": false }] }, "尼娅(队友)": { "class": ["鱼类", "纺织品"], "goods": [{ "name": "奶油橘味煎饼", "town": "古拉", "class": "主食", "need": false }, { "name": "斯佩比亚熊木雕", "town": "斯佩比亚", "class": "美术品", "need": false }] }, "尼娅(异刃)": { "class": ["鱼类", "乐器"], "goods": [{ "name": "雪孩子土豆色拉", "town": "弥先村", "class": "蔬菜", "need": true }, { "name": "秘密潜入", "town": "阿伐利提亚", "class": "桌游", "need": false }] }, "白虎": { "class": ["肉类", "桌游"], "goods": [{ "name": "兴奋翻车鱼干", "town": "英维迪亚首都", "class": "鱼", "need": false }, { "name": "万年杉树古琴", "town": "古拉", "class": "乐器", "need": false }] }, "虎": { "class": ["饮料", "乐器"], "goods": [{ "name": "多汁包子", "town": "阿伐利提亚", "class": "主食", "need": false }, { "name": "镂空披肩", "town": "弥先村", "class": "纺织品", "need": false }] }, "花JS": { "class": ["主食", "乐器"], "goods": [{ "name": "泡泡果汁", "town": "阿伐利提亚", "class": "饮料", "need": false }, { "name": "圆圆沙锤", "town": "阿伐利提亚", "class": "乐器", "need": false }] }, "花JK": { "class": ["蔬菜", "美术品"], "goods": [{ "name": "满天宝石挞", "town": "斯佩比亚", "class": "甜点", "need": true }, { "name": "玄武纹棉布", "town": "洛修利亚", "class": "纺织品", "need": false }] }, "花JD": { "class": ["主食", "纺织品"], "goods": [{ "name": "迷情蜜瓜冰糕", "town": "阿伐利提亚", "class": "甜点", "need": false }, { "name": "风花梳子", "town": "古拉", "class": "化妆品", "need": false }] }, "梅勒芙": { "class": ["蔬菜", "美术品"], "goods": [{ "name": "炸肉排", "town": "斯佩比亚", "class": "肉", "need": false }, { "name": "蒸汽管风琴", "town": "斯佩比亚", "class": "乐器", "need": false }] }, "伽具土": { "class": ["甜品", "化妆品"], "goods": [{ "name": "融雪千层饼", "town": "洛修利亚", "class": "甜点", "need": false }, { "name": "阿鲁斯油护手霜", "town": "英维迪亚首都", "class": "化妆品", "need": false }] }, "齐格": { "class": ["肉类", "纺织品"], "goods": [{ "name": "英雄阿德尔烤饼", "town": "洛修利亚", "class": "蔬菜", "need": false }, { "name": "雪花水晶壶", "town": "洛修利亚", "class": "美术品", "need": false }] }, "彩歌": { "class": ["肉类", "书籍"], "goods": [{ "name": "蛋黄酱烤章鱼", "town": "洛修利亚", "class": "主食", "need": false }, { "name": "星月唇膏", "town": "洛修利亚", "class": "化妆品", "need": false }] }, "朱雀": { "class": ["鱼类", "桌游"], "goods": [{ "name": "树染缠腰布", "town": "古拉", "class": "纺织品", "need": false }, { "name": "烤全深渊蝶鲨", "town": "洛修利亚", "class": "鱼", "need": false }] }, "绵津见": { "class": ["甜品", "美术品"], "goods": [{ "name": "熔岩馅饼", "town": "洛修利亚", "class": "主食", "need": false }, { "name": "莫特科拉人偶", "town": "弥先村", "class": "美术品", "need": false }] }, "水分": { "class": ["甜品", "书籍"], "goods": [{ "name": "高级雪花奶酪蛋糕", "town": "洛修利亚", "class": "甜点", "need": false }, { "name": "卷卷假睫毛", "town": "阿伐利提亚", "class": "化妆品", "need": false }] }, "星织": { "class": ["蔬菜", "桌游"], "goods": [{ "name": "炖蔬菜浓汤", "town": "洛修利亚", "class": "蔬菜", "need": false }, { "name": "雪花闪亮香水", "town": "古拉", "class": "化妆品", "need": true }] }, "天威": { "class": ["饮料", "桌游\t"], "goods": [{ "name": "月光香蕉牛奶", "town": "古拉", "class": "饮料", "need": false }, { "name": "宝石台球", "town": "洛修利亚", "class": "桌游", "need": true }] }, "重音": { "class": ["主食", "化妆品"], "goods": [{ "name": "妖精菲尔梅莉的雕像", "town": "斯佩比亚", "class": "美术品", "need": true }, { "name": "天文占卜大辞典", "town": "洛修利亚", "class": "书籍", "need": true }] }, "KOSMOS": { "class": ["主食", "桌游"], "goods": [{ "name": "剑斗士相扑", "town": "英维迪亚首都", "class": "桌游", "need": false }, { "name": "主任咖喱", "town": "英维迪亚首都", "class": "主食", "need": false }] }, "八重切": { "class": ["肉类", "书籍"], "goods": [{ "name": "炭烤铁火鸟", "town": "英维迪亚首都", "class": "肉", "need": true }, { "name": "隐匿勇者嘉拉德的肖像画", "town": "洛修利亚", "class": "美术品", "need": false }] }, "玛瑙": { "class": ["饮料", "美术品"], "goods": [{ "name": "香味干金枪鱼头汤", "town": "斯佩比亚", "class": "鱼", "need": true }, { "name": "假肢阿乔的悲惨世界", "town": "斯佩比亚", "class": "书籍", "need": false }] }, "韦驮天": { "class": ["主食", "化妆品"], "goods": [{ "name": "巨大蘑菇派", "town": "阿伐利提亚", "class": "主食", "need": false }, { "name": "冰霜迪法露", "town": "弥先村", "class": "饮料", "need": false }] }, "石榴": { "class": ["饮料", "化妆品"], "goods": [{ "name": "花香巴伐利亚奶羹", "town": "英维迪亚首都", "class": "甜点", "need": false }, { "name": "海螺假发", "town": "古拉", "class": "化妆品", "need": true }] }, "蓟": { "class": ["饮料", "书籍"], "goods": [{ "name": "蒸汽雪花凉拌色拉", "town": "斯佩比亚", "class": "蔬菜", "need": true }, { "name": "蛋白珊瑚口红", "town": "英维迪亚首都", "class": "化妆品", "need": false }] }, "结": { "class": ["鱼类", "化妆品"], "goods": [{ "name": "蜜豆牡丹饼", "town": "阿伐利提亚", "class": "甜点", "need": true }, { "name": "托里格雪花围巾", "town": "洛修利亚", "class": "纺织品", "need": true }] }, "七冰": { "class": ["甜品", "化妆品"], "goods": [{ "name": "托里格鲁特琴", "town": "古拉", "class": "乐器", "need": false }, { "name": "蒸汽管风琴", "town": "斯佩比亚", "class": "乐器", "need": false }] }, "宇迦": { "class": ["鱼类", "乐器"], "goods": [{ "name": "三色丸子", "town": "异刃技能", "class": "焰的料理", "need": false }, { "name": "意外之失", "town": "洛修利亚", "class": "桌游", "need": false }] }, "雷鼓": { "class": ["肉类", "乐器"], "goods": [{ "name": "蜂蜜牛奶", "town": "阿伐利提亚", "class": "饮料", "need": false, "desc": "找齐十二兄弟刷新" }, { "name": "金属小鼓", "town": "斯佩比亚", "class": "乐器", "need": false }] }, "伊吹": { "class": ["蔬菜", "化妆品"], "goods": [{ "name": "肉甜椒镶菜", "town": "古拉", "class": "蔬菜", "need": false }, { "name": "雪花闪亮香水", "town": "古拉", "class": "化妆品", "need": true }] }, "萤": { "class": ["蔬菜", "美术品"], "goods": [{ "name": "镂空花纹的树叶头巾", "town": "古拉", "class": "纺织品", "need": true }, { "name": "饼雪团子", "town": "洛修利亚", "class": "甜点", "need": true }] }, "凛音": { "class": ["甜品", "纺织品"], "goods": [{ "name": "阿卡狄亚茶", "town": "弥先村", "class": "饮料", "need": false }, { "name": "艾菲姆的铜像", "town": "斯佩比亚", "class": "美术品", "need": false }] }, "纽兹": { "class": ["肉类", "乐器"], "goods": [{ "name": "军事区域", "town": "斯佩比亚", "class": "桌游", "need": false }, { "name": "活力炒电击里脊肉", "town": "弥先村", "class": "肉", "need": false }] }, "式": { "class": ["蔬菜", "书籍"], "goods": [{ "name": "托里格风味腌菜", "town": "古拉", "class": "蔬菜", "need": false }, { "name": "利贝拉里塔斯的生活", "town": "阿伐利提亚", "class": "桌游", "need": true }] }, "时叶": { "class": ["鱼类", "纺织品"], "goods": [{ "name": "深焙黑咖啡", "town": "弗雷斯贝古村庄", "class": "饮料", "need": false }, { "name": "冯斯低音提琴", "town": "弗雷斯贝古村庄", "class": "乐器", "need": false }] }, "月": { "class": ["蔬菜", "化妆品"], "goods": [{ "name": "果肉包", "town": "洛修利亚", "class": "主食", "need": true }, { "name": "洛修利亚冰魔方", "town": "异刃技能", "class": "月的冰雕", "need": false }] }, "鸣": { "class": ["甜品", "纺织品"], "goods": [{ "name": "香脆冰雪酱瓜", "town": "洛修利亚", "class": "蔬菜", "need": false }, { "name": "王家羊毛", "town": "异刃技能", "class": "鸣的纺织", "need": false }] }, "雄黄": { "class": ["甜品", "纺织品"], "goods": [{ "name": "霓虹葡萄布丁", "town": "异刃技能", "class": "雄黄的糕点", "need": false }, { "name": "帝国秘密温泉一日游", "town": "斯佩比亚", "class": "书籍", "need": false }] }, "力男": { "class": ["主食", "书籍"], "goods": [{ "name": "糖醋海洋茶鱼", "town": "阿伐利提亚", "class": "鱼", "need": false }, { "name": "雪原的诺彭强盗", "town": "洛修利亚", "class": "桌游", "need": true }] }, "红莲": { "class": ["肉类", "乐器"], "goods": [{ "name": "星形肉排", "town": "古拉", "class": "肉", "need": false }, { "name": "玫拉姆森林冒险记", "town": "阿伐利提亚", "class": "书籍", "need": true }] }, "宫比罗": { "class": ["鱼类", "美术品"], "goods": [{ "name": "慢火煎芬芳虾", "town": "洛修利亚", "class": "鱼", "need": false }, { "name": "黑色花田", "town": "古拉", "class": "美术品", "need": false }] }, "婆娑罗": { "class": ["饮料", "美术品"], "goods": [{ "name": "雪醋淋冰包心菜", "town": "洛修利亚", "class": "蔬菜", "need": true }, { "name": "赤杆三味线", "town": "弗雷斯贝古村庄", "class": "乐器", "need": false }] } };
+
+var arrTown = exports.arrTown = { "阿伐利提亚": { "主食": { "buff": "战斗经验值提升10%", "goods": [{ "name": "阿伐利提亚什锦面", "desc": "仅晚上出售，无关产权" }, { "name": "多汁包子", "blade": "虎" }, { "name": "弹弹炒饭" }, { "name": "巨大蘑菇派", "blade": "韦驮天" }, { "name": "阳光包子", "need": true }, { "name": "美味香肠包", "need": true }] }, "鱼": { "buff": "获得心相点数时额外获得1点", "goods": [{ "name": "烤锚尾鱼" }, { "name": "炒油牡蛎" }, { "name": "糖醋海洋茶鱼", "blade": "力男" }] }, "甜点": { "buff": "获得发展点数时额外获得1点", "goods": [{ "name": "迷情蜜瓜冰糕", "blade": "花JD" }, { "name": "诺彭彭卷" }, { "name": "亮晶晶砂糖" }, { "name": "纳西梨果冻" }, { "name": "蜜豆牡丹饼", "need": true, "blade": "结" }] }, "饮料": { "buff": "道具发现能力提升10%", "goods": [{ "name": "闪亮果汁" }, { "name": "泡泡果汁", "blade": "花JS" }, { "name": "绵绵果汁" }, { "name": "水苏菜", "desc": "找齐十二兄弟刷新" }, { "name": "蜂蜜牛奶", "desc": "找齐十二兄弟刷新", "blade": "雷鼓" }, { "name": "什锦冰沙", "desc": "找齐十二兄弟刷新" }] }, "乐器": { "buff": "敌方侦查距离降低5%", "goods": [{ "name": "圆圆沙锤", "blade": "花JS" }, { "name": "诺彭里里" }, { "name": "欢乐康加鼓" }, { "name": "吵闹竖笛" }, { "name": "扭动响板", "need": true }, { "name": "坚硬摇铃", "need": true }] }, "书籍": { "buff": "获得心相点数时额外获得1点", "goods": [{ "name": "简单打捞说明书" }, { "name": "怪盗毛毛和黄金枪" }, { "name": "千年阿鲁斯" }, { "name": "玫拉姆森林冒险记", "need": true, "blade": "红莲" }, { "name": "诺彭小姆尼于蒸汽镇", "need": true }, { "name": "莫尔斯古文献第2卷", "desc": "式的羁绊任务" }] }, "桌游": { "buff": "生活道具上限增加10", "goods": [{ "name": "卡卡岛" }, { "name": "诺彭棋" }, { "name": "秘密潜入", "blade": "尼娅(异刃)" }, { "name": "66号交易通道" }, { "name": "珊瑚彭诺棋", "need": true }, { "name": "利贝拉里塔斯的生活", "need": true, "blade": "式" }] }, "化妆品": { "buff": "掉落道具收集范围提升50cm", "goods": [{ "name": "软绵古龙水" }, { "name": "润滑化妆水" }, { "name": "清爽凝胶水" }, { "name": "卷卷假睫毛", "blade": "水分" }, { "name": "饱满指甲油" }, { "name": "绵密满月衬垫", "need": true }] } }, "古拉": { "主食": { "buff": "奔跑速度提升5%", "goods": [{ "name": "卢斯卡团子" }, { "name": "炖卢斯卡面" }, { "name": "火腿番茄三明治" }, { "name": "甜菜鱼肉飞饼" }, { "name": "奶油橘味煎饼", "blade": "尼娅(队友)" }, { "name": "什锦卢斯卡面", "need": true }, { "name": "幸运锦兰面包", "desc": "重音羁绊任务" }] }, "蔬菜": { "buff": "掉落道具收集范围提升50cm", "goods": [{ "name": "快煎脆脆草" }, { "name": "托里格风味腌菜", "blade": "式" }, { "name": "肉甜椒镶菜", "blade": "伊吹" }, { "name": "脆叶包心菜色拉" }] }, "肉": { "buff": "吸引距离提升2m", "goods": [{ "name": "星形肉排", "blade": "红莲" }, { "name": "甜甜小香肠" }, { "name": "木豆酱炒肉", "need": true }, { "name": "芥末酱香肠", "need": true }] }, "鱼": { "buff": "掉落道具收集范围提升50cm", "goods": [{ "name": "古拉鲣鱼干" }, { "name": "香煎金刚岩鱼" }, { "name": "二足蟹辣椒汤", "need": true }] }, "饮料": { "buff": "非战斗状态队伍槽减少量降低25%", "goods": [{ "name": "月光香蕉牛奶", "blade": "天威" }, { "name": "古拉蜜蜂茶" }, { "name": "库克莱尔天然水" }, { "name": "牛奶朝气百香果", "need": true }, { "name": "胜利果冰", "need": true }] }, "乐器": { "buff": "奔跑速度提升5%", "goods": [{ "name": "托里格鲁特琴", "blade": "七冰" }, { "name": "木纹阿尔卑斯长号", "blade": "焰" }, { "name": "万年杉树古琴", "blade": "白虎" }, { "name": "木琴", "need": true }, { "name": "珊瑚木琴", "need": true }] }, "美术品": { "buff": "道具发现能力提升10%", "goods": [{ "name": "丘陵上伫立的少女" }, { "name": "黑色花田", "blade": "宫比罗" }, { "name": "巴恩的版画", "need": true }, { "name": "木雕烈王像", "need": true }] }, "化妆品": { "buff": "战斗经验值提升10%", "goods": [{ "name": "软软粉底" }, { "name": "树枝护发素" }, { "name": "风花梳子", "blade": "花JD" }, { "name": "海螺假发", "need": true, "blade": "石榴" }, { "name": "雪花闪亮香水", "need": true, "blade": "星织、伊吹" }] }, "纺织品": { "buff": "战斗获取金币提升10%", "goods": [{ "name": "拼图木小包" }, { "name": "托里格布垫子" }, { "name": "树染缠腰布", "blade": "朱雀" }, { "name": "树叶光斑纹样的窗帘" }, { "name": "镂空花纹的树叶头巾", "need": true, "blade": "萤" }, { "name": "雪花边披肩", "need": true }] } }, "弗雷斯贝古村庄": { "蔬菜": { "buff": "获得发展点数时额外获得1点", "goods": [{ "name": "黑石榴果香肠" }, { "name": "腌制火花烤串" }, { "name": "水煮肌肉莲花", "need": true }, { "name": "流水腌冰包心菜", "need": true }] }, "饮料": { "buff": "吸引距离提升2m", "goods": [{ "name": "深焙黑咖啡", "blade": "时叶" }, { "name": "赛利奥茶", "blade": "焰" }, { "name": "木豆奶昔" }, { "name": "冒泡拉西", "need": true }] }, "乐器": { "buff": "敌方侦查距离降低5%", "goods": [{ "name": "赤杆三味线", "blade": "婆娑罗" }, { "name": "冯斯低音提琴", "blade": "时叶" }, { "name": "豪杰竖琴" }, { "name": "云卷贝阿贝鸠奈琴" }, { "name": "珀彭大提琴", "need": true }] }, "纺织品": { "buff": "战斗获取金币提升10%", "goods": [{ "name": "佐鸣布发饰" }, { "name": "鳞甲兽皮角斗士" }, { "name": "珊瑚布毛巾" }, { "name": "绚烂图饰手帕" }, { "name": "古拉木羽衣" }, { "name": "佐鸣布结晶毯子" }] } }, "英维迪亚首都": { "主食": { "buff": "道具发现能力提升10%", "goods": [{ "name": "薄饼包菜" }, { "name": "三味奶酪馅饼" }, { "name": "主任咖喱", "blade": "KOSMOS" }, { "name": "热带芋馅饼", "need": true }, { "name": "足料香肠馅饼", "need": true }] }, "肉": { "buff": "掉落道具收集范围提升50cm", "goods": [{ "name": "带骨鳞甲兽肉排" }, { "name": "兽肉细面" }, { "name": "酱烤铁板肉", "need": true }, { "name": "炭烤铁火鸟", "need": true, "blade": "八重切" }] }, "鱼": { "buff": "战斗获取金币提升10%", "goods": [{ "name": "兴奋翻车鱼干", "blade": "白虎" }, { "name": "薄切大佬金枪雪花鱼片" }, { "name": "清蒸蓝腮太阳鱼", "need": true }, { "name": "冰鱼烤坚果肉", "need": true }] }, "甜点": { "buff": "非战斗状态队伍槽减少量降低25%", "goods": [{ "name": "胜利吉事果", "desc": "小卖车出售，不计入产权" }, { "name": "苦味巧克力", "desc": "小卖车出售，不计入产权" }, { "name": "彩虹冰糕" }, { "name": "花香巴伐利亚奶羹", "blade": "石榴" }, { "name": "羽衣桃羊羹", "need": true }] }, "美术品": { "buff": "战斗获取金币提升10%", "goods": [{ "name": "喜剧王的雕刻" }, { "name": "最后的合唱", "blade": "光" }, { "name": "唱圣歌的圣女像", "need": true }, { "name": "升天的阿鲁斯", "need": true }] }, "书籍": { "buff": "吸引距离提升2m", "goods": [{ "name": "幽界神话戏曲" }, { "name": "塞洛斯亚公爵传记" }, { "name": "幽界美术名画全集", "need": true }, { "name": "阿德尔初恋战纪", "need": true }] }, "桌游": { "buff": "奔跑速度提升5%", "goods": [{ "name": "阶级扑克牌" }, { "name": "剑斗士相扑", "blade": "KOSMOS" }, { "name": "珊瑚黑白棋", "blade": "莱克斯" }, { "name": "宝石航线" }, { "name": "诺彭彭庭院" }, { "name": "珊瑚纸牌" }] }, "化妆品": { "buff": "毒性区域等地形伤害降低10%", "goods": [{ "name": "蛋白珊瑚口红", "blade": "蓟" }, { "name": "阿鲁斯油护手霜", "blade": "伽具土" }, { "name": "黄金睫毛膏" }, { "name": "美丽胭脂", "need": true }, { "name": "弥先珊瑚唇彩", "need": true }] } }, "斯佩比亚": { "蔬菜": { "buff": "敌方侦查距离降低5%", "goods": [{ "name": "海豚苦瓜夹肉" }, { "name": "黄昏炭火烤串" }, { "name": "爽口温菜色拉", "need": true }, { "name": "蒸汽雪花凉拌色拉", "need": true, "blade": "蓟" }] }, "肉": { "buff": "增幅器道具上限数提升10", "goods": [{ "name": "兽肉木豆烤串" }, { "name": "香草生肉奶油粥" }, { "name": "蒸汽铁火鸟" }, { "name": "星形炸肉排" }, { "name": "木豆煮鳞甲兽肉" }, { "name": "炸肉排", "blade": "梅勒芙" }] }, "鱼": { "buff": "增幅器道具上限数提升10", "goods": [{ "name": "香烤沙鲑" }, { "name": "云海蟹奶油土豆饼", "blade": "光" }, { "name": "甜醋沙鲑", "need": true }, { "name": "香味干金枪鱼头汤", "need": true, "blade": "玛瑙" }] }, "甜点": { "buff": "吸引距离提升2m", "goods": [{ "name": "蒸汽奶味面包" }, { "name": "蒸汽宝石冰" }, { "name": "木豆大福团子" }, { "name": "满天宝石挞", "need": true, "blade": "花JK" }, { "name": "迪法露果胶挞", "need": true }, { "name": "热红宝石蒸汽面包", "need": true }] }, "乐器": { "buff": "掉落道具收集范围提升50cm", "goods": [{ "name": "铜管小号" }, { "name": "蒸汽管风琴", "blade": "梅勒芙、七冰" }, { "name": "军队中提琴" }, { "name": "金属小鼓", "blade": "雷鼓" }, { "name": "管木琴", "need": true }, { "name": "冰柱马林巴", "need": true }] }, "美术品": { "buff": "非战斗状态队伍槽减少量降低25%", "goods": [{ "name": "朋克人偶" }, { "name": "艾菲姆的铜像", "blade": "凛音" }, { "name": "斯佩比亚熊木雕", "blade": "尼娅(队友)" }, { "name": "妖精菲尔梅莉的雕像", "need": true, "blade": "重音" }, { "name": "海螺八音盒", "need": true }] }, "书籍": { "buff": "毒性区域等地形伤害降低10%", "goods": [{ "name": "斯佩比亚帝国军兵器图鉴" }, { "name": "皇帝艾非姆战纪" }, { "name": "帝国秘密温泉一日游", "blade": "雄黄" }, { "name": "假肢阿乔的悲惨世界", "blade": "玛瑙" }, { "name": "纯白之恋~穿越雪原~" }, { "name": "诺彭能发战争财吗？", "need": true }] }, "桌游": { "buff": "道具发现能力提升10%", "goods": [{ "name": "军事区域", "blade": "纽兹" }, { "name": "管桩积木" }, { "name": "秘密裁决" }, { "name": "决斗王国" }, { "name": "交涉王国", "need": true }, { "name": "水管工逃脱游戏", "need": true }] } }, "洛修利亚": { "主食": { "buff": "非战斗状态队伍槽减少量降低25%", "goods": [{ "name": "熔岩馅饼", "blade": "绵津见" }, { "name": "奥托燕麦粥" }, { "name": "蛋黄酱烤章鱼", "blade": "彩歌" }, { "name": "果肉包", "need": true, "blade": "月" }, { "name": "铁火肉排盖浇饭", "need": true }] }, "蔬菜": { "buff": "战斗经验值提升10%", "goods": [{ "name": "炖蔬菜浓汤", "blade": "星织" }, { "name": "英雄阿德尔烤饼", "blade": "齐格" }, { "name": "香脆冰雪酱瓜", "blade": "鸣" }, { "name": "粉雪粉叶草软冻" }, { "name": "雪醋淋冰包心菜", "need": true, "blade": "婆娑罗" }] }, "鱼": { "buff": "战斗经验值提升10%", "goods": [{ "name": "慢火煎芬芳虾", "blade": "宫比罗" }, { "name": "烤全深渊蝶鲨", "blade": "朱雀" }, { "name": "热牡蛎卷", "need": true }, { "name": "冰鱼包子浓汤", "need": true }] }, "甜点": { "buff": "生活道具上限数量增加10", "goods": [{ "name": "轻飘飘雪花冰霜" }, { "name": "融雪千层饼", "blade": "伽具土" }, { "name": "烤炉钠夕立" }, { "name": "高级雪花奶酪蛋糕", "blade": "水分" }, { "name": "迪法路宾治", "need": true }, { "name": "饼雪团子", "need": true, "blade": "萤" }] }, "美术品": { "buff": "", "goods": [{ "name": "古代王肖像" }, { "name": "雪花水晶壶", "blade": "齐格" }, { "name": "隐匿勇者嘉拉德的肖像画", "blade": "八重切" }, { "name": "丘陵上伫立的少女" }, { "name": "最后的合唱", "blade": "光" }] }, "书籍": { "buff": "奔跑速度提升5%", "goods": [{ "name": "与荣耀共行" }, { "name": "鳞甲兽的感情" }, { "name": "铠虾座的证人" }, { "name": "英雄阿德尔的历史" }, { "name": "暴风雪中的圣歌队", "need": true }, { "name": "天文占卜大辞典", "need": true, "blade": "重音" }, { "name": "耽美绅士之书", "desc": "协助执笔支线，无关产权" }] }, "桌游": { "buff": "道具发现能力提升10%", "goods": [{ "name": "意外之失", "blade": "宇迦" }, { "name": "吹牛之夜" }, { "name": "再见了金钱" }, { "name": "雪原的诺彭强盗", "need": true, "blade": "力男" }, { "name": "宝石台球", "need": true, "blade": "天威" }] }, "化妆品": { "buff": "生活道具上限数量增加10", "goods": [{ "name": "暖暖油" }, { "name": "巧克力眼影" }, { "name": "星月唇膏", "blade": "彩歌" }, { "name": "诺彭尾指甲油" }, { "name": "蒸汽粉底" }] }, "纺织品": { "buff": "战斗经验值提升10%", "goods": [{ "name": "洛修利亚天鹅绒" }, { "name": "雪花纹步鞋垫" }, { "name": "玄武纹棉布", "blade": "花JK" }, { "name": "热条纹布" }, { "name": "五线谱花纹发夹", "need": true }, { "name": "托里格雪花围巾", "need": true, "blade": "结" }] } }, "弥先村": { "蔬菜": { "buff": "战斗获取金币提升10%", "goods": [{ "name": "里贝利亚杂烩汤" }, { "name": "绿奶酪色拉" }, { "name": "烤蔬菜千层饼" }, { "name": "温蔬菜煎牡蛎", "need": true }, { "name": "雪孩子土豆色拉", "need": true, "blade": "尼娅(异刃)" }] }, "肉": { "buff": "毒性区域等地形伤害降低10%", "goods": [{ "name": "鸵羽兽肉煎饺" }, { "name": "叠烤白培根" }, { "name": "甜味红烧鳞甲兽排骨肉" }, { "name": "活力炒电击里脊肉", "blade": "纽兹" }, { "name": "香味包子奶油浓汤", "need": true }, { "name": "薄饼杂炒", "need": true }] }, "鱼": { "buff": "奔跑速度提升5%", "goods": [{ "name": "煮独刺鱼" }, { "name": "煎拍水大虾" }, { "name": "炙烤云海蟹" }, { "name": "火炙冰鱼花胡桃" }, { "name": "蜜青将鱼" }] }, "饮料": { "buff": "敌方侦察距离降低5%", "goods": [{ "name": "迪法露" }, { "name": "阿卡狄亚茶", "blade": "凛音" }, { "name": "冰霜迪法露", "blade": "韦驮天" }, { "name": "水管吸管果冰霜", "need": true }, { "name": "鳞甲兽奶柠檬茶", "need": true }] }, "美术品": { "buff": "获得心相点数时获得1点", "goods": [{ "name": "月光花环" }, { "name": "莫特科拉人偶", "blade": "绵津见" }, { "name": "钢管海翼龙" }, { "name": "嫩绿月光面具" }] }, "纺织品": { "buff": "吸引距离提升2m", "goods": [{ "name": "水母凤仙花绒毯" }, { "name": "曼陀罗花纹门帘" }, { "name": "辟魔曼陀罗毛巾" }, { "name": "镂空披肩", "blade": "虎" }, { "name": "彭诺斗篷", "need": true }, { "name": "镂空花纹头饰", "need": true }] } }, "异刃技能": { "焰的料理": { "goods": [{ "name": "托里格风味塔尔塔里烤鱼", "blade": "莱克斯" }, { "name": "三色丸子", "blade": "宇迦" }] }, "月的冰雕": { "goods": [{ "name": "洛修利亚冰魔方", "blade": "月" }] }, "鸣的纺织": { "goods": [{ "name": "王家羊毛", "blade": "鸣" }] }, "雄黄的糕点": { "goods": [{ "name": "霓虹葡萄布丁", "blade": "雄黄" }] } } };
+
+var _NAME = exports._NAME = ["莱克斯", "焰", "光", "尼娅(队友)", "尼娅(异刃)", "白虎", "虎", "花JS", "花JK", "花JD", "梅勒芙", "伽具土", "齐格", "彩歌", "朱雀", "绵津见", "水分", "星织", "天威", "重音", "KOSMOS", "八重切", "玛瑙", "韦驮天", "石榴", "蓟", "结", "七冰", "宇迦", "雷鼓", "伊吹", "萤", "凛音", "纽兹", "式", "时叶", "月", "鸣", "雄黄", "力男", "红莲", "宫比罗", "婆娑罗"];
+
+var _TOWN = exports._TOWN = ["阿伐利提亚", "古拉", "弗雷斯贝古村庄", "英维迪亚首都", "斯佩比亚", "洛修利亚", "弥先村"];
+
+// 初始化所有物品
+var initAll = exports.initAll = function initAll() {
+
+    return arrAll;
+
+    //const info = _GOODS, blade = _BLADE
+
+    // let arr = []
+
+    // for (let i in info) {
+    //     for (let j in info[i]) {
+    //         for (let k = 0, dio = info[i][j].goods.length; k < dio; k++) {
+    //             const item = info[i][j].goods[k]
+    //             arr.push({
+    //                 town: i,
+    //                 class: j,
+    //                 name: item.name,
+    //                 need: item.need ? true : false,
+    //                 desc: item.desc,
+    //             })
+    //         }
+    //     }
+    // }
+
+    // for (let i of arr) {
+    //     for (let j of blade) {
+    //         if (j.goods.includes(i.name)) i.blade = j.name
+    //     }
+    // }
+
+    // console.log(JSON.stringify(arr))
+
+    // return arr
+};
+
+// 初始化异刃
+var initBlade = exports.initBlade = function initBlade() {
+
+    return arrBlade;
+
+    // const info = _BLADE
+
+    // let obj = {}
+
+    // for (let i = 0, dio = info.length; i < dio; i++) {
+    //     obj[info[i].name] = ''
+    //     let goodsArr = []
+    //     for (let j = 0, mango = info[i].goods.length; j < mango; j++) {
+    //         for (let k = 0, jotaro = arrAll.length; k < jotaro; k++) {
+    //             if (arrAll[k].name === info[i].goods[j]) {
+    //                 const item = arrAll[k]
+    //                 goodsArr.push({
+    //                     name: item.name,
+    //                     town: item.town,
+    //                     class: item.class,
+    //                     need: item.need,
+    //                     desc: item.desc,
+    //                 })
+    //             }
+    //         }
+    //     }
+    //     obj[info[i].name] = {
+    //         class: info[i].class,
+    //         goods: goodsArr,
+    //     }
+    // }
+
+    // console.log(JSON.stringify(obj))
+
+    // return obj
+};
+
+// 初始化城镇
+var initTown = exports.initTown = function initTown() {
+
+    // let info = _GOODS, blade = _BLADE
+
+    // for (let i in info) {
+    //     for (let j in info[i]) {
+    //         for (let k = 0, dio = info[i][j].goods.length; k < dio; k++) {
+    //             const name = info[i][j].goods[k].name
+    //             for (let o of blade) {
+    //                 if (o.goods.includes(name)) {
+    //                     if (info[i][j].goods[k].blade) {
+    //                         info[i][j].goods[k].blade += `、${o.name}`
+    //                     } else {
+    //                         info[i][j].goods[k].blade = o.name
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+
+    return arrTown;
+};
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
 /* WEBPACK VAR INJECTION */(function(process) {/**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -492,7 +615,7 @@ module.exports = invariant;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -561,86 +684,6 @@ module.exports = warning;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 7 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-var arrAll = [{ "town": "阿伐利提亚", "class": "主食", "name": "阿伐利提亚什锦面", "need": false, "desc": "仅限晚上出售" }, { "town": "阿伐利提亚", "class": "主食", "name": "多汁包子", "need": false, "desc": "完成彭诺回家支线开启" }, { "town": "阿伐利提亚", "class": "主食", "name": "弹弹炒饭", "need": false, "desc": "完成彭诺回家支线开启" }, { "town": "阿伐利提亚", "class": "主食", "name": "巨大蘑菇派", "need": false, "desc": "完成彭诺回家支线开启" }, { "town": "阿伐利提亚", "class": "主食", "name": "阳光包子", "need": true, "desc": "完成彭诺回家支线开启" }, { "town": "阿伐利提亚", "class": "主食", "name": "美味香肠包", "need": true, "desc": "完成彭诺回家支线开启" }, { "town": "阿伐利提亚", "class": "鱼", "name": "烤锚尾鱼", "need": false }, { "town": "阿伐利提亚", "class": "鱼", "name": "炒油牡蛎", "need": false }, { "town": "阿伐利提亚", "class": "鱼", "name": "糖醋海洋茶鱼", "need": false }, { "town": "阿伐利提亚", "class": "甜点", "name": "迷情蜜瓜冰糕", "need": false }, { "town": "阿伐利提亚", "class": "甜点", "name": "诺彭彭卷", "need": false }, { "town": "阿伐利提亚", "class": "甜点", "name": "亮晶晶砂糖", "need": false }, { "town": "阿伐利提亚", "class": "甜点", "name": "纳西梨果冻", "need": false }, { "town": "阿伐利提亚", "class": "甜点", "name": "蜜豆牡丹饼", "need": true }, { "town": "阿伐利提亚", "class": "饮料", "name": "闪亮果汁", "need": false }, { "town": "阿伐利提亚", "class": "饮料", "name": "泡泡果汁", "need": false }, { "town": "阿伐利提亚", "class": "饮料", "name": "绵绵果汁", "need": false }, { "town": "阿伐利提亚", "class": "饮料", "name": "水苏菜", "need": false, "desc": "找齐十二兄弟刷新" }, { "town": "阿伐利提亚", "class": "饮料", "name": "蜂蜜牛奶", "need": false, "desc": "找齐十二兄弟刷新" }, { "town": "阿伐利提亚", "class": "饮料", "name": "什锦冰沙", "need": false, "desc": "找齐十二兄弟刷新" }, { "town": "阿伐利提亚", "class": "乐器", "name": "圆圆沙锤", "need": false }, { "town": "阿伐利提亚", "class": "乐器", "name": "诺彭里里", "need": false }, { "town": "阿伐利提亚", "class": "乐器", "name": "欢乐康加鼓", "need": false }, { "town": "阿伐利提亚", "class": "乐器", "name": "吵闹竖笛", "need": false }, { "town": "阿伐利提亚", "class": "乐器", "name": "扭动响板", "need": true }, { "town": "阿伐利提亚", "class": "乐器", "name": "坚硬摇铃", "need": true }, { "town": "阿伐利提亚", "class": "书籍", "name": "简单打捞说明书", "need": false }, { "town": "阿伐利提亚", "class": "书籍", "name": "怪盗毛毛和黄金枪", "need": false }, { "town": "阿伐利提亚", "class": "书籍", "name": "千年阿鲁斯", "need": false }, { "town": "阿伐利提亚", "class": "书籍", "name": "玫拉姆森林冒险记", "need": true }, { "town": "阿伐利提亚", "class": "书籍", "name": "诺彭小姆尼于蒸汽镇", "need": true }, { "town": "阿伐利提亚", "class": "书籍", "name": "莫尔斯古文献第2卷", "need": false, "desc": "式的羁绊任务" }, { "town": "阿伐利提亚", "class": "桌游", "name": "卡卡岛", "need": false }, { "town": "阿伐利提亚", "class": "桌游", "name": "诺彭棋", "need": false }, { "town": "阿伐利提亚", "class": "桌游", "name": "秘密潜入", "need": false }, { "town": "阿伐利提亚", "class": "桌游", "name": "66号交易通道", "need": false }, { "town": "阿伐利提亚", "class": "桌游", "name": "珊瑚彭诺棋", "need": true }, { "town": "阿伐利提亚", "class": "桌游", "name": "利贝拉里塔斯的生活", "need": true }, { "town": "阿伐利提亚", "class": "化妆品", "name": "软绵古龙水", "need": false }, { "town": "阿伐利提亚", "class": "化妆品", "name": "润滑化妆水", "need": false }, { "town": "阿伐利提亚", "class": "化妆品", "name": "清爽凝胶水", "need": false }, { "town": "阿伐利提亚", "class": "化妆品", "name": "卷卷假睫毛", "need": false }, { "town": "阿伐利提亚", "class": "化妆品", "name": "饱满指甲油", "need": false }, { "town": "阿伐利提亚", "class": "化妆品", "name": "绵密满月衬垫", "need": true }, { "town": "古拉", "class": "主食", "name": "卢斯卡团子", "need": false }, { "town": "古拉", "class": "主食", "name": "炖卢斯卡面", "need": false }, { "town": "古拉", "class": "主食", "name": "火腿番茄三明治", "need": false }, { "town": "古拉", "class": "主食", "name": "甜菜鱼肉飞饼", "need": false }, { "town": "古拉", "class": "主食", "name": "奶油橘味煎饼", "need": false }, { "town": "古拉", "class": "主食", "name": "什锦卢斯卡面", "need": true }, { "town": "古拉", "class": "主食", "name": "幸运锦兰面包", "need": false, "desc": "重音羁绊任务" }, { "town": "古拉", "class": "蔬菜", "name": "快煎脆脆草", "need": false }, { "town": "古拉", "class": "蔬菜", "name": "托里格风味腌菜", "need": false }, { "town": "古拉", "class": "蔬菜", "name": "肉甜椒镶菜", "need": false }, { "town": "古拉", "class": "蔬菜", "name": "脆叶包心菜色拉", "need": false }, { "town": "古拉", "class": "肉", "name": "星形肉排", "need": false }, { "town": "古拉", "class": "肉", "name": "甜甜小香肠", "need": false }, { "town": "古拉", "class": "肉", "name": "木豆酱炒肉", "need": true }, { "town": "古拉", "class": "肉", "name": "芥末酱香肠", "need": true }, { "town": "古拉", "class": "鱼", "name": "古拉鲣鱼干", "need": false }, { "town": "古拉", "class": "鱼", "name": "香煎金刚岩鱼", "need": false }, { "town": "古拉", "class": "鱼", "name": "二足蟹辣椒汤", "need": true }, { "town": "古拉", "class": "饮料", "name": "月光香蕉牛奶", "need": false }, { "town": "古拉", "class": "饮料", "name": "古拉蜜蜂茶", "need": false }, { "town": "古拉", "class": "饮料", "name": "库克莱尔天然水", "need": false }, { "town": "古拉", "class": "饮料", "name": "牛奶朝气百香果", "need": true }, { "town": "古拉", "class": "饮料", "name": "胜利果冰", "need": true }, { "town": "古拉", "class": "乐器", "name": "托里格鲁特琴", "need": false }, { "town": "古拉", "class": "乐器", "name": "木纹阿尔卑斯长号", "need": false }, { "town": "古拉", "class": "乐器", "name": "万年杉树古琴", "need": false }, { "town": "古拉", "class": "乐器", "name": "木琴", "need": true }, { "town": "古拉", "class": "乐器", "name": "珊瑚木琴", "need": true }, { "town": "古拉", "class": "美术品", "name": "丘陵上伫立的少女", "need": false }, { "town": "古拉", "class": "美术品", "name": "黑色花田", "need": false }, { "town": "古拉", "class": "美术品", "name": "巴恩的版画", "need": true }, { "town": "古拉", "class": "美术品", "name": "木雕烈王像", "need": true }, { "town": "古拉", "class": "化妆品", "name": "软软粉底", "need": false }, { "town": "古拉", "class": "化妆品", "name": "树枝护发素", "need": false }, { "town": "古拉", "class": "化妆品", "name": "风花梳子", "need": false }, { "town": "古拉", "class": "化妆品", "name": "海螺假发", "need": true }, { "town": "古拉", "class": "化妆品", "name": "雪花闪亮香水", "need": true }, { "town": "古拉", "class": "纺织品", "name": "拼图木小包", "need": false }, { "town": "古拉", "class": "纺织品", "name": "托里格布垫子", "need": false }, { "town": "古拉", "class": "纺织品", "name": "树染缠腰布", "need": false }, { "town": "古拉", "class": "纺织品", "name": "树叶光斑纹样的窗帘", "need": false }, { "town": "古拉", "class": "纺织品", "name": "镂空花纹的树叶头巾", "need": true }, { "town": "古拉", "class": "纺织品", "name": "雪花边披肩", "need": true }, { "town": "弗雷斯贝古村庄", "class": "蔬菜", "name": "黑石榴果香肠", "need": false }, { "town": "弗雷斯贝古村庄", "class": "蔬菜", "name": "腌制火花烤串", "need": false }, { "town": "弗雷斯贝古村庄", "class": "蔬菜", "name": "水煮肌肉莲花", "need": true }, { "town": "弗雷斯贝古村庄", "class": "蔬菜", "name": "流水腌冰包心菜", "need": true }, { "town": "弗雷斯贝古村庄", "class": "饮料", "name": "深焙黑咖啡", "need": false }, { "town": "弗雷斯贝古村庄", "class": "饮料", "name": "赛利奥茶", "need": false }, { "town": "弗雷斯贝古村庄", "class": "饮料", "name": "木豆奶昔", "need": false }, { "town": "弗雷斯贝古村庄", "class": "饮料", "name": "冒泡拉西", "need": true }, { "town": "弗雷斯贝古村庄", "class": "乐器", "name": "赤杆三味线", "need": false }, { "town": "弗雷斯贝古村庄", "class": "乐器", "name": "冯斯低音提琴", "need": false }, { "town": "弗雷斯贝古村庄", "class": "乐器", "name": "豪杰竖琴", "need": false }, { "town": "弗雷斯贝古村庄", "class": "乐器", "name": "云卷贝阿贝鸠奈琴", "need": false }, { "town": "弗雷斯贝古村庄", "class": "乐器", "name": "珀彭大提琴", "need": true }, { "town": "弗雷斯贝古村庄", "class": "纺织品", "name": "佐鸣布发饰", "need": false }, { "town": "弗雷斯贝古村庄", "class": "纺织品", "name": "鳞甲兽皮角斗士", "need": false }, { "town": "弗雷斯贝古村庄", "class": "纺织品", "name": "珊瑚布毛巾", "need": false }, { "town": "弗雷斯贝古村庄", "class": "纺织品", "name": "绚烂图饰手帕", "need": false }, { "town": "弗雷斯贝古村庄", "class": "纺织品", "name": "古拉木羽衣", "need": false }, { "town": "弗雷斯贝古村庄", "class": "纺织品", "name": "佐鸣布结晶毯子", "need": false }, { "town": "英维迪亚首都", "class": "主食", "name": "薄饼包菜", "need": false }, { "town": "英维迪亚首都", "class": "主食", "name": "三味奶酪馅饼", "need": false }, { "town": "英维迪亚首都", "class": "主食", "name": "主任咖喱", "need": false }, { "town": "英维迪亚首都", "class": "主食", "name": "热带芋馅饼", "need": true }, { "town": "英维迪亚首都", "class": "主食", "name": "足料香肠馅饼", "need": true }, { "town": "英维迪亚首都", "class": "肉", "name": "带骨鳞甲兽肉排", "need": false }, { "town": "英维迪亚首都", "class": "肉", "name": "兽肉细面", "need": false }, { "town": "英维迪亚首都", "class": "肉", "name": "酱烤铁板肉", "need": true }, { "town": "英维迪亚首都", "class": "肉", "name": "炭烤铁火鸟", "need": true }, { "town": "英维迪亚首都", "class": "鱼", "name": "兴奋翻车鱼干", "need": false }, { "town": "英维迪亚首都", "class": "鱼", "name": "薄切大佬金枪雪花鱼片", "need": false }, { "town": "英维迪亚首都", "class": "鱼", "name": "清蒸蓝腮太阳鱼", "need": true }, { "town": "英维迪亚首都", "class": "鱼", "name": "冰鱼烤坚果肉", "need": true }, { "town": "英维迪亚首都", "class": "甜点", "name": "胜利吉事果", "need": false, "desc": "小卖车出售，不计入产权" }, { "town": "英维迪亚首都", "class": "甜点", "name": "苦味巧克力", "need": false, "desc": "小卖车出售，不计入产权" }, { "town": "英维迪亚首都", "class": "甜点", "name": "彩虹冰糕", "need": false }, { "town": "英维迪亚首都", "class": "甜点", "name": "花香巴伐利亚奶羹", "need": false }, { "town": "英维迪亚首都", "class": "甜点", "name": "羽衣桃羊羹", "need": true }, { "town": "英维迪亚首都", "class": "美术品", "name": "喜剧王的雕刻", "need": false }, { "town": "英维迪亚首都", "class": "美术品", "name": "最后的合唱", "need": false }, { "town": "英维迪亚首都", "class": "美术品", "name": "唱圣歌的圣女像", "need": true }, { "town": "英维迪亚首都", "class": "美术品", "name": "升天的阿鲁斯", "need": true }, { "town": "英维迪亚首都", "class": "书籍", "name": "幽界神话戏曲", "need": false }, { "town": "英维迪亚首都", "class": "书籍", "name": "塞洛斯亚公爵传记", "need": false }, { "town": "英维迪亚首都", "class": "书籍", "name": "幽界美术名画全集", "need": true }, { "town": "英维迪亚首都", "class": "书籍", "name": "阿德尔初恋战纪", "need": true }, { "town": "英维迪亚首都", "class": "桌游", "name": "阶级扑克牌", "need": false }, { "town": "英维迪亚首都", "class": "桌游", "name": "剑斗士相扑", "need": false }, { "town": "英维迪亚首都", "class": "桌游", "name": "珊瑚黑白棋", "need": false }, { "town": "英维迪亚首都", "class": "桌游", "name": "宝石航线", "need": false }, { "town": "英维迪亚首都", "class": "桌游", "name": "诺彭彭庭院", "need": false }, { "town": "英维迪亚首都", "class": "桌游", "name": "珊瑚纸牌", "need": false }, { "town": "英维迪亚首都", "class": "化妆品", "name": "蛋白珊瑚口红", "need": false }, { "town": "英维迪亚首都", "class": "化妆品", "name": "阿鲁斯油护手霜", "need": false }, { "town": "英维迪亚首都", "class": "化妆品", "name": "黄金睫毛膏", "need": false }, { "town": "英维迪亚首都", "class": "化妆品", "name": "美丽胭脂", "need": true }, { "town": "英维迪亚首都", "class": "化妆品", "name": "弥先珊瑚唇彩", "need": true }, { "town": "斯佩比亚", "class": "蔬菜", "name": "海豚苦瓜夹肉", "need": false }, { "town": "斯佩比亚", "class": "蔬菜", "name": "黄昏炭火烤串", "need": false }, { "town": "斯佩比亚", "class": "蔬菜", "name": "爽口温菜色拉", "need": true }, { "town": "斯佩比亚", "class": "蔬菜", "name": "蒸汽雪花凉拌色拉", "need": true }, { "town": "斯佩比亚", "class": "肉", "name": "兽肉木豆烤串", "need": false }, { "town": "斯佩比亚", "class": "肉", "name": "香草生肉奶油粥", "need": false }, { "town": "斯佩比亚", "class": "肉", "name": "蒸汽铁火鸟", "need": false }, { "town": "斯佩比亚", "class": "肉", "name": "星形炸肉排", "need": false }, { "town": "斯佩比亚", "class": "肉", "name": "木豆煮鳞甲兽肉", "need": false }, { "town": "斯佩比亚", "class": "肉", "name": "炸肉排", "need": false }, { "town": "斯佩比亚", "class": "鱼", "name": "香烤沙鲑", "need": false }, { "town": "斯佩比亚", "class": "鱼", "name": "云海蟹奶油土豆饼", "need": false }, { "town": "斯佩比亚", "class": "鱼", "name": "甜醋沙鲑", "need": true }, { "town": "斯佩比亚", "class": "鱼", "name": "香味干金枪鱼头汤", "need": true }, { "town": "斯佩比亚", "class": "甜点", "name": "蒸汽奶味面包", "need": false }, { "town": "斯佩比亚", "class": "甜点", "name": "蒸汽宝石冰", "need": false }, { "town": "斯佩比亚", "class": "甜点", "name": "木豆大福团子", "need": false }, { "town": "斯佩比亚", "class": "甜点", "name": "满天宝石挞", "need": true }, { "town": "斯佩比亚", "class": "甜点", "name": "迪法露果胶挞", "need": true }, { "town": "斯佩比亚", "class": "甜点", "name": "热红宝石蒸汽面包", "need": true }, { "town": "斯佩比亚", "class": "乐器", "name": "铜管小号", "need": false }, { "town": "斯佩比亚", "class": "乐器", "name": "蒸汽管风琴", "need": false }, { "town": "斯佩比亚", "class": "乐器", "name": "军队中提琴", "need": false }, { "town": "斯佩比亚", "class": "乐器", "name": "金属小鼓", "need": false }, { "town": "斯佩比亚", "class": "乐器", "name": "管木琴", "need": true }, { "town": "斯佩比亚", "class": "乐器", "name": "冰柱马林巴", "need": true }, { "town": "斯佩比亚", "class": "美术品", "name": "朋克人偶", "need": false }, { "town": "斯佩比亚", "class": "美术品", "name": "艾菲姆的铜像", "need": false }, { "town": "斯佩比亚", "class": "美术品", "name": "斯佩比亚熊木雕", "need": false }, { "town": "斯佩比亚", "class": "美术品", "name": "妖精菲尔梅莉的雕像", "need": true }, { "town": "斯佩比亚", "class": "美术品", "name": "海螺八音盒", "need": true }, { "town": "斯佩比亚", "class": "书籍", "name": "斯佩比亚帝国军兵器图鉴", "need": false }, { "town": "斯佩比亚", "class": "书籍", "name": "皇帝艾非姆战纪", "need": false }, { "town": "斯佩比亚", "class": "书籍", "name": "帝国秘密温泉一日游", "need": false }, { "town": "斯佩比亚", "class": "书籍", "name": "假肢阿乔的悲惨世界", "need": false }, { "town": "斯佩比亚", "class": "书籍", "name": "纯白之恋~穿越雪原~", "need": false }, { "town": "斯佩比亚", "class": "书籍", "name": "诺彭能发战争财吗？", "need": true }, { "town": "斯佩比亚", "class": "桌游", "name": "军事区域", "need": false }, { "town": "斯佩比亚", "class": "桌游", "name": "管桩积木", "need": false }, { "town": "斯佩比亚", "class": "桌游", "name": "秘密裁决", "need": false }, { "town": "斯佩比亚", "class": "桌游", "name": "决斗王国", "need": false }, { "town": "斯佩比亚", "class": "桌游", "name": "交涉王国", "need": true }, { "town": "斯佩比亚", "class": "桌游", "name": "水管工逃脱游戏", "need": true }, { "town": "洛修利亚", "class": "主食", "name": "熔岩馅饼", "need": false }, { "town": "洛修利亚", "class": "主食", "name": "奥托燕麦粥", "need": false }, { "town": "洛修利亚", "class": "主食", "name": "蛋黄酱烤章鱼", "need": false }, { "town": "洛修利亚", "class": "主食", "name": "果肉包", "need": true }, { "town": "洛修利亚", "class": "主食", "name": "铁火肉排盖浇饭", "need": true }, { "town": "洛修利亚", "class": "蔬菜", "name": "炖蔬菜浓汤", "need": false }, { "town": "洛修利亚", "class": "蔬菜", "name": "英雄阿德尔烤饼", "need": false }, { "town": "洛修利亚", "class": "蔬菜", "name": "香脆冰雪酱瓜", "need": false }, { "town": "洛修利亚", "class": "蔬菜", "name": "粉雪粉叶草软冻", "need": false }, { "town": "洛修利亚", "class": "蔬菜", "name": "雪醋淋冰包心菜", "need": true }, { "town": "洛修利亚", "class": "鱼", "name": "慢火煎芬芳虾", "need": false }, { "town": "洛修利亚", "class": "鱼", "name": "烤全深渊蝶鲨", "need": false }, { "town": "洛修利亚", "class": "鱼", "name": "热牡蛎卷", "need": true }, { "town": "洛修利亚", "class": "鱼", "name": "冰鱼包子浓汤", "need": true }, { "town": "洛修利亚", "class": "甜点", "name": "轻飘飘雪花冰霜", "need": false }, { "town": "洛修利亚", "class": "甜点", "name": "融雪千层饼", "need": false }, { "town": "洛修利亚", "class": "甜点", "name": "烤炉钠夕立", "need": false }, { "town": "洛修利亚", "class": "甜点", "name": "高级雪花奶酪蛋糕", "need": false }, { "town": "洛修利亚", "class": "甜点", "name": "迪法路宾治", "need": true }, { "town": "洛修利亚", "class": "甜点", "name": "饼雪团子", "need": true }, { "town": "洛修利亚", "class": "美术品", "name": "古代王肖像", "need": false }, { "town": "洛修利亚", "class": "美术品", "name": "雪花水晶壶", "need": false }, { "town": "洛修利亚", "class": "美术品", "name": "隐匿勇者嘉拉德的肖像画", "need": false }, { "town": "洛修利亚", "class": "美术品", "name": "丘陵上伫立的少女", "need": false }, { "town": "洛修利亚", "class": "美术品", "name": "最后的合唱", "need": false }, { "town": "洛修利亚", "class": "书籍", "name": "与荣耀共行", "need": false }, { "town": "洛修利亚", "class": "书籍", "name": "鳞甲兽的感情", "need": false }, { "town": "洛修利亚", "class": "书籍", "name": "铠虾座的证人", "need": false }, { "town": "洛修利亚", "class": "书籍", "name": "英雄阿德尔的历史", "need": false }, { "town": "洛修利亚", "class": "书籍", "name": "暴风雪中的圣歌队", "need": true }, { "town": "洛修利亚", "class": "书籍", "name": "天文占卜大辞典", "need": true }, { "town": "洛修利亚", "class": "书籍", "name": "耽美绅士之书", "need": false, "desc": "协助执笔支线，无关产权" }, { "town": "洛修利亚", "class": "桌游", "name": "意外之失", "need": false }, { "town": "洛修利亚", "class": "桌游", "name": "吹牛之夜", "need": false }, { "town": "洛修利亚", "class": "桌游", "name": "再见了金钱", "need": false }, { "town": "洛修利亚", "class": "桌游", "name": "雪原的诺彭强盗", "need": true }, { "town": "洛修利亚", "class": "桌游", "name": "宝石台球", "need": true }, { "town": "洛修利亚", "class": "化妆品", "name": "暖暖油", "need": false }, { "town": "洛修利亚", "class": "化妆品", "name": "巧克力眼影", "need": false }, { "town": "洛修利亚", "class": "化妆品", "name": "星月唇膏", "need": false }, { "town": "洛修利亚", "class": "化妆品", "name": "诺彭尾指甲油", "need": false }, { "town": "洛修利亚", "class": "化妆品", "name": "蒸汽粉底", "need": false }, { "town": "洛修利亚", "class": "纺织品", "name": "洛修利亚天鹅绒", "need": false }, { "town": "洛修利亚", "class": "纺织品", "name": "雪花纹步鞋垫", "need": false }, { "town": "洛修利亚", "class": "纺织品", "name": "玄武纹棉布", "need": false }, { "town": "洛修利亚", "class": "纺织品", "name": "热条纹布", "need": false }, { "town": "洛修利亚", "class": "纺织品", "name": "五线谱花纹发夹", "need": true }, { "town": "洛修利亚", "class": "纺织品", "name": "托里格雪花围巾", "need": true }, { "town": "弥先村", "class": "蔬菜", "name": "里贝利亚杂烩汤", "need": false }, { "town": "弥先村", "class": "蔬菜", "name": "绿奶酪色拉", "need": false }, { "town": "弥先村", "class": "蔬菜", "name": "烤蔬菜千层饼", "need": false }, { "town": "弥先村", "class": "蔬菜", "name": "温蔬菜煎牡蛎", "need": true }, { "town": "弥先村", "class": "蔬菜", "name": "雪孩子土豆色拉", "need": true }, { "town": "弥先村", "class": "肉", "name": "鸵羽兽肉煎饺", "need": false }, { "town": "弥先村", "class": "肉", "name": "叠烤白培根", "need": false }, { "town": "弥先村", "class": "肉", "name": "甜味红烧鳞甲兽排骨肉", "need": false }, { "town": "弥先村", "class": "肉", "name": "活力炒电击里脊肉", "need": false }, { "town": "弥先村", "class": "肉", "name": "香味包子奶油浓汤", "need": true }, { "town": "弥先村", "class": "肉", "name": "薄饼杂炒", "need": true }, { "town": "弥先村", "class": "鱼", "name": "煮独刺鱼", "need": false }, { "town": "弥先村", "class": "鱼", "name": "煎拍水大虾", "need": false }, { "town": "弥先村", "class": "鱼", "name": "炙烤云海蟹", "need": false }, { "town": "弥先村", "class": "鱼", "name": "火炙冰鱼花胡桃", "need": false }, { "town": "弥先村", "class": "鱼", "name": "蜜青将鱼", "need": false }, { "town": "弥先村", "class": "饮料", "name": "迪法露", "need": false }, { "town": "弥先村", "class": "饮料", "name": "阿卡狄亚茶", "need": false }, { "town": "弥先村", "class": "饮料", "name": "冰霜迪法露", "need": false }, { "town": "弥先村", "class": "饮料", "name": "水管吸管果冰霜", "need": true }, { "town": "弥先村", "class": "饮料", "name": "鳞甲兽奶柠檬茶", "need": true }, { "town": "弥先村", "class": "美术品", "name": "月光花环", "need": false }, { "town": "弥先村", "class": "美术品", "name": "莫特科拉人偶", "need": false }, { "town": "弥先村", "class": "美术品", "name": "钢管海翼龙", "need": false }, { "town": "弥先村", "class": "美术品", "name": "嫩绿月光面具", "need": false }, { "town": "弥先村", "class": "纺织品", "name": "水母凤仙花绒毯", "need": false }, { "town": "弥先村", "class": "纺织品", "name": "曼陀罗花纹门帘", "need": false }, { "town": "弥先村", "class": "纺织品", "name": "辟魔曼陀罗毛巾", "need": false }, { "town": "弥先村", "class": "纺织品", "name": "镂空披肩", "need": false }, { "town": "弥先村", "class": "纺织品", "name": "彭诺斗篷", "need": true }, { "town": "弥先村", "class": "纺织品", "name": "镂空花纹头饰", "need": true }, { "town": "异刃技能", "class": "焰的料理", "name": "托里格风味塔尔塔里烤鱼", "need": false }, { "town": "异刃技能", "class": "焰的料理", "name": "三色丸子", "need": false }, { "town": "异刃技能", "class": "月的冰雕", "name": "洛修利亚冰魔方", "need": false }, { "town": "异刃技能", "class": "鸣的纺织", "name": "王家羊毛", "need": false }, { "town": "异刃技能", "class": "雄黄的糕点", "name": "霓虹葡萄布丁", "need": false }];
-
-var arrBlade = { "莱克斯": { "class": ["饮料", "美术品"], "goods": [{ "name": "托里格风味塔尔塔里烤鱼", "town": "异刃技能", "class": "焰的料理", "need": false }, { "name": "珊瑚黑白棋", "town": "英维迪亚首都", "class": "桌游", "need": false }] }, "焰": { "class": ["蔬菜", "书籍"], "goods": [{ "name": "赛利奥茶", "town": "弗雷斯贝古村庄", "class": "饮料", "need": false }, { "name": "木纹阿尔卑斯长号", "town": "古拉", "class": "乐器", "need": false }] }, "光": { "class": ["甜品", "美术品"], "goods": [{ "name": "最后的合唱", "town": "英维迪亚首都", "class": "美术品", "need": false }, { "name": "最后的合唱", "town": "洛修利亚", "class": "美术品", "need": false }] }, "尼娅(队友)": { "class": ["鱼类", "纺织品"], "goods": [{ "name": "奶油橘味煎饼", "town": "古拉", "class": "主食", "need": false }, { "name": "斯佩比亚熊木雕", "town": "斯佩比亚", "class": "美术品", "need": false }] }, "尼娅(异刃)": { "class": ["鱼类", "乐器"], "goods": [{ "name": "雪孩子土豆色拉", "town": "弥先村", "class": "蔬菜", "need": true }, { "name": "秘密潜入", "town": "阿伐利提亚", "class": "桌游", "need": false }] }, "白虎": { "class": ["肉类", "桌游"], "goods": [{ "name": "兴奋翻车鱼干", "town": "英维迪亚首都", "class": "鱼", "need": false }, { "name": "万年杉树古琴", "town": "古拉", "class": "乐器", "need": false }] }, "虎": { "class": ["饮料", "乐器"], "goods": [{ "name": "多汁包子", "town": "阿伐利提亚", "class": "主食", "need": false, "desc": "完成彭诺回家支线开启" }, { "name": "镂空披肩", "town": "弥先村", "class": "纺织品", "need": false }] }, "花JS": { "class": ["主食", "乐器"], "goods": [{ "name": "泡泡果汁", "town": "阿伐利提亚", "class": "饮料", "need": false }, { "name": "圆圆沙锤", "town": "阿伐利提亚", "class": "乐器", "need": false }] }, "花JK": { "class": ["蔬菜", "美术品"], "goods": [{ "name": "满天宝石挞", "town": "斯佩比亚", "class": "甜点", "need": true }, { "name": "玄武纹棉布", "town": "洛修利亚", "class": "纺织品", "need": false }] }, "花JD": { "class": ["主食", "纺织品"], "goods": [{ "name": "迷情蜜瓜冰糕", "town": "阿伐利提亚", "class": "甜点", "need": false }, { "name": "风花梳子", "town": "古拉", "class": "化妆品", "need": false }] }, "梅勒芙": { "class": ["蔬菜", "美术品"], "goods": [{ "name": "炸肉排", "town": "斯佩比亚", "class": "肉", "need": false }, { "name": "蒸汽管风琴", "town": "斯佩比亚", "class": "乐器", "need": false }] }, "伽具土": { "class": ["甜品", "化妆品"], "goods": [{ "name": "融雪千层饼", "town": "洛修利亚", "class": "甜点", "need": false }, { "name": "阿鲁斯油护手霜", "town": "英维迪亚首都", "class": "化妆品", "need": false }] }, "齐格": { "class": ["肉类", "纺织品"], "goods": [{ "name": "英雄阿德尔烤饼", "town": "洛修利亚", "class": "蔬菜", "need": false }, { "name": "雪花水晶壶", "town": "洛修利亚", "class": "美术品", "need": false }] }, "彩歌": { "class": ["肉类", "书籍"], "goods": [{ "name": "蛋黄酱烤章鱼", "town": "洛修利亚", "class": "主食", "need": false }, { "name": "星月唇膏", "town": "洛修利亚", "class": "化妆品", "need": false }] }, "朱雀": { "class": ["鱼类", "桌游"], "goods": [{ "name": "树染缠腰布", "town": "古拉", "class": "纺织品", "need": false }, { "name": "烤全深渊蝶鲨", "town": "洛修利亚", "class": "鱼", "need": false }] }, "绵津见": { "class": ["甜品", "美术品"], "goods": [{ "name": "熔岩馅饼", "town": "洛修利亚", "class": "主食", "need": false }, { "name": "莫特科拉人偶", "town": "弥先村", "class": "美术品", "need": false }] }, "水分": { "class": ["甜品", "书籍"], "goods": [{ "name": "高级雪花奶酪蛋糕", "town": "洛修利亚", "class": "甜点", "need": false }, { "name": "卷卷假睫毛", "town": "阿伐利提亚", "class": "化妆品", "need": false }] }, "星织": { "class": ["蔬菜", "桌游"], "goods": [{ "name": "炖蔬菜浓汤", "town": "洛修利亚", "class": "蔬菜", "need": false }, { "name": "雪花闪亮香水", "town": "古拉", "class": "化妆品", "need": true }] }, "天威": { "class": ["饮料", "桌游\t"], "goods": [{ "name": "月光香蕉牛奶", "town": "古拉", "class": "饮料", "need": false }, { "name": "宝石台球", "town": "洛修利亚", "class": "桌游", "need": true }] }, "重音": { "class": ["主食", "化妆品"], "goods": [{ "name": "妖精菲尔梅莉的雕像", "town": "斯佩比亚", "class": "美术品", "need": true }, { "name": "天文占卜大辞典", "town": "洛修利亚", "class": "书籍", "need": true }] }, "KOSMOS": { "class": ["主食", "桌游"], "goods": [{ "name": "剑斗士相扑", "town": "英维迪亚首都", "class": "桌游", "need": false }, { "name": "主任咖喱", "town": "英维迪亚首都", "class": "主食", "need": false }] }, "八重切": { "class": ["肉类", "书籍"], "goods": [{ "name": "炭烤铁火鸟", "town": "英维迪亚首都", "class": "肉", "need": true }, { "name": "隐匿勇者嘉拉德的肖像画", "town": "洛修利亚", "class": "美术品", "need": false }] }, "玛瑙": { "class": ["饮料", "美术品"], "goods": [{ "name": "香味干金枪鱼头汤", "town": "斯佩比亚", "class": "鱼", "need": true }, { "name": "假肢阿乔的悲惨世界", "town": "斯佩比亚", "class": "书籍", "need": false }] }, "韦驮天": { "class": ["主食", "化妆品"], "goods": [{ "name": "巨大蘑菇派", "town": "阿伐利提亚", "class": "主食", "need": false, "desc": "完成彭诺回家支线开启" }, { "name": "冰霜迪法露", "town": "弥先村", "class": "饮料", "need": false }] }, "石榴": { "class": ["饮料", "化妆品"], "goods": [{ "name": "花香巴伐利亚奶羹", "town": "英维迪亚首都", "class": "甜点", "need": false }, { "name": "海螺假发", "town": "古拉", "class": "化妆品", "need": true }] }, "蓟": { "class": ["饮料", "书籍"], "goods": [{ "name": "蒸汽雪花凉拌色拉", "town": "斯佩比亚", "class": "蔬菜", "need": true }, { "name": "蛋白珊瑚口红", "town": "英维迪亚首都", "class": "化妆品", "need": false }] }, "结": { "class": ["鱼类", "化妆品"], "goods": [{ "name": "蜜豆牡丹饼", "town": "阿伐利提亚", "class": "甜点", "need": true }, { "name": "托里格雪花围巾", "town": "洛修利亚", "class": "纺织品", "need": true }] }, "七冰": { "class": ["甜品", "化妆品"], "goods": [{ "name": "托里格鲁特琴", "town": "古拉", "class": "乐器", "need": false }, { "name": "蒸汽管风琴", "town": "斯佩比亚", "class": "乐器", "need": false }] }, "宇迦": { "class": ["鱼类", "乐器"], "goods": [{ "name": "三色丸子", "town": "异刃技能", "class": "焰的料理", "need": false }, { "name": "意外之失", "town": "洛修利亚", "class": "桌游", "need": false }] }, "雷鼓": { "class": ["肉类", "乐器"], "goods": [{ "name": "蜂蜜牛奶", "town": "阿伐利提亚", "class": "饮料", "need": false, "desc": "找齐十二兄弟刷新" }, { "name": "金属小鼓", "town": "斯佩比亚", "class": "乐器", "need": false }] }, "伊吹": { "class": ["蔬菜", "化妆品"], "goods": [{ "name": "肉甜椒镶菜", "town": "古拉", "class": "蔬菜", "need": false }, { "name": "雪花闪亮香水", "town": "古拉", "class": "化妆品", "need": true }] }, "萤": { "class": ["蔬菜", "美术品"], "goods": [{ "name": "镂空花纹的树叶头巾", "town": "古拉", "class": "纺织品", "need": true }, { "name": "饼雪团子", "town": "洛修利亚", "class": "甜点", "need": true }] }, "凛音": { "class": ["甜品", "纺织品"], "goods": [{ "name": "阿卡狄亚茶", "town": "弥先村", "class": "饮料", "need": false }, { "name": "艾菲姆的铜像", "town": "斯佩比亚", "class": "美术品", "need": false }] }, "纽兹": { "class": ["肉类", "乐器"], "goods": [{ "name": "军事区域", "town": "斯佩比亚", "class": "桌游", "need": false }, { "name": "活力炒电击里脊肉", "town": "弥先村", "class": "肉", "need": false }] }, "式": { "class": ["蔬菜", "书籍"], "goods": [{ "name": "托里格风味腌菜", "town": "古拉", "class": "蔬菜", "need": false }, { "name": "利贝拉里塔斯的生活", "town": "阿伐利提亚", "class": "桌游", "need": true }] }, "时叶": { "class": ["鱼类", "纺织品"], "goods": [{ "name": "深焙黑咖啡", "town": "弗雷斯贝古村庄", "class": "饮料", "need": false }, { "name": "冯斯低音提琴", "town": "弗雷斯贝古村庄", "class": "乐器", "need": false }] }, "月": { "class": ["蔬菜", "化妆品"], "goods": [{ "name": "果肉包", "town": "洛修利亚", "class": "主食", "need": true }, { "name": "洛修利亚冰魔方", "town": "异刃技能", "class": "月的冰雕", "need": false }] }, "鸣": { "class": ["甜品", "纺织品"], "goods": [{ "name": "香脆冰雪酱瓜", "town": "洛修利亚", "class": "蔬菜", "need": false }, { "name": "王家羊毛", "town": "异刃技能", "class": "鸣的纺织", "need": false }] }, "雄黄": { "class": ["甜品", "纺织品"], "goods": [{ "name": "霓虹葡萄布丁", "town": "异刃技能", "class": "雄黄的糕点", "need": false }, { "name": "帝国秘密温泉一日游", "town": "斯佩比亚", "class": "书籍", "need": false }] }, "力男": { "class": ["主食", "书籍"], "goods": [{ "name": "糖醋海洋茶鱼", "town": "阿伐利提亚", "class": "鱼", "need": false }, { "name": "雪原的诺彭强盗", "town": "洛修利亚", "class": "桌游", "need": true }] }, "红莲": { "class": ["肉类", "乐器"], "goods": [{ "name": "星形肉排", "town": "古拉", "class": "肉", "need": false }, { "name": "玫拉姆森林冒险记", "town": "阿伐利提亚", "class": "书籍", "need": true }] }, "宫比罗": { "class": ["鱼类", "美术品"], "goods": [{ "name": "慢火煎芬芳虾", "town": "洛修利亚", "class": "鱼", "need": false }, { "name": "黑色花田", "town": "古拉", "class": "美术品", "need": false }] }, "婆娑罗": { "class": ["饮料", "美术品"], "goods": [{ "name": "雪醋淋冰包心菜", "town": "洛修利亚", "class": "蔬菜", "need": true }, { "name": "赤杆三味线", "town": "弗雷斯贝古村庄", "class": "乐器", "need": false }] } };
-
-var _NAME = exports._NAME = ["莱克斯", "焰", "光", "尼娅(队友)", "尼娅(异刃)", "白虎", "虎", "花JS", "花JK", "花JD", "梅勒芙", "伽具土", "齐格", "彩歌", "朱雀", "绵津见", "水分", "星织", "天威", "重音", "KOSMOS", "八重切", "玛瑙", "韦驮天", "石榴", "蓟", "结", "七冰", "宇迦", "雷鼓", "伊吹", "萤", "凛音", "纽兹", "式", "时叶", "月", "鸣", "雄黄", "力男", "红莲", "宫比罗", "婆娑罗"];
-
-var _TOWN = exports._TOWN = ["阿伐利提亚", "古拉", "弗雷斯贝古村庄", "英维迪亚首都", "斯佩比亚", "洛修利亚", "弥先村"];
-
-// 初始化所有物品
-var initAll = exports.initAll = function initAll(info) {
-
-    return arrAll;
-
-    // let arr = []
-
-    // for (let i in info) {
-    //     for (let j in info[i]) {
-    //         for (let k = 0, dio = info[i][j].goods.length; k < dio; k++) {
-    //             const item = info[i][j].goods[k]
-    //             arr.push({
-    //                 town: i,
-    //                 class: j,
-    //                 name: item.name,
-    //                 need: item.need ? true : false,
-    //                 desc: item.desc,
-    //             })
-    //         }
-    //     }
-    // }
-
-    // console.log(JSON.stringify(arr))
-
-    // return arr
-};
-
-// 初始化异刃
-var initBlade = exports.initBlade = function initBlade(info) {
-
-    return arrBlade;
-
-    // let obj = {}
-
-    // for (let i = 0, dio = info.length; i < dio; i++) {
-    //     obj[info[i].name] = ''
-    //     let goodsArr = []
-    //     for (let j = 0, mango = info[i].goods.length; j < mango; j++) {
-    //         for (let k = 0, jotaro = arrAll.length; k < jotaro; k++) {
-    //             if (arrAll[k].name === info[i].goods[j]) {
-    //                 const item = arrAll[k]
-    //                 goodsArr.push({
-    //                     name: item.name,
-    //                     town: item.town,
-    //                     class: item.class,
-    //                     need: item.need,
-    //                     desc: item.desc,
-    //                 })
-    //             }
-    //         }
-    //     }
-    //     obj[info[i].name] = {
-    //         class: info[i].class,
-    //         goods: goodsArr,
-    //     }
-    // }
-
-    // console.log(JSON.stringify(obj))
-
-    // return obj
-};
-
-/***/ }),
 /* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -655,8 +698,8 @@ var initBlade = exports.initBlade = function initBlade(info) {
 
 
 if (process.env.NODE_ENV !== 'production') {
-  var invariant = __webpack_require__(5);
-  var warning = __webpack_require__(6);
+  var invariant = __webpack_require__(6);
+  var warning = __webpack_require__(7);
   var ReactPropTypesSecret = __webpack_require__(22);
   var loggedTypeFailures = {};
 }
@@ -1020,7 +1063,7 @@ module.exports = focusNode;
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(34);
+var content = __webpack_require__(36);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -1034,8 +1077,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./menu.scss", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./menu.scss");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/postcss-loader/lib/index.js??ref--1-2!../../node_modules/sass-loader/lib/loader.js!./menu.scss", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/postcss-loader/lib/index.js??ref--1-2!../../node_modules/sass-loader/lib/loader.js!./menu.scss");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -1183,7 +1226,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(35);
+var	fixUrls = __webpack_require__(37);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -1524,9 +1567,9 @@ var _reactDom2 = _interopRequireDefault(_reactDom);
 
 var _menu = __webpack_require__(32);
 
-var _all = __webpack_require__(36);
+var _all = __webpack_require__(38);
 
-var _blade = __webpack_require__(38);
+var _blade = __webpack_require__(39);
 
 var _town = __webpack_require__(40);
 
@@ -1555,8 +1598,9 @@ var App = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (_ref = App.__proto__ || Object.getPrototypeOf(App)).call.apply(_ref, [this].concat(props)));
 
         _this.state = {
-            menu: 'all',
-            name: ''
+            menu: 'blade',
+            name: '',
+            type: ''
         };
         _this.changeMenu = _this.changeMenu.bind(_this);
         _this.onSelect = _this.onSelect.bind(_this);
@@ -1566,13 +1610,12 @@ var App = function (_React$Component) {
     _createClass(App, [{
         key: 'changeMenu',
         value: function changeMenu(menu) {
-            this.setState({ menu: menu });
+            this.setState({ menu: menu, name: '' });
         }
     }, {
         key: 'onSelect',
-        value: function onSelect(name) {
-            console.log(name);
-            this.setState({ name: name });
+        value: function onSelect(name, type) {
+            this.setState({ name: name, type: type });
         }
     }, {
         key: 'render',
@@ -1580,6 +1623,7 @@ var App = function (_React$Component) {
             var _state = this.state,
                 menu = _state.menu,
                 name = _state.name,
+                type = _state.type,
                 Content = function Content() {
                 switch (menu) {
                     case 'all':
@@ -1587,7 +1631,7 @@ var App = function (_React$Component) {
                     case 'blade':
                         return _react2.default.createElement(_blade.Blade, { name: name });break;
                     case 'town':
-                        return _react2.default.createElement(_town.Town, null);break;
+                        return _react2.default.createElement(_town.Town, { name: name, type: type });break;
                 }
             };
 
@@ -1657,8 +1701,8 @@ if (process.env.NODE_ENV !== "production") {
 
 var _assign = __webpack_require__(3);
 var emptyObject = __webpack_require__(4);
-var invariant = __webpack_require__(5);
-var warning = __webpack_require__(6);
+var invariant = __webpack_require__(6);
+var warning = __webpack_require__(7);
 var emptyFunction = __webpack_require__(2);
 var checkPropTypes = __webpack_require__(8);
 
@@ -3378,8 +3422,8 @@ if (process.env.NODE_ENV !== "production") {
 'use strict';
 
 var React = __webpack_require__(1);
-var invariant = __webpack_require__(5);
-var warning = __webpack_require__(6);
+var invariant = __webpack_require__(6);
+var warning = __webpack_require__(7);
 var ExecutionEnvironment = __webpack_require__(9);
 var _assign = __webpack_require__(3);
 var emptyFunction = __webpack_require__(2);
@@ -18935,7 +18979,7 @@ __webpack_require__(15);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var config = [{ id: 'all', name: '物品一览' }, { id: 'blade', name: '查询喜好' }, { id: 'town', name: '查询城镇' }];
+var config = [{ id: 'blade', name: '查询喜好' }, { id: 'town', name: '查询城镇' }, { id: 'all', name: '物品一览' }];
 
 var Menu = exports.Menu = function Menu(props) {
     return _react2.default.createElement(
@@ -18983,241 +19027,133 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Select = undefined;
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _init = __webpack_require__(7);
+var _init = __webpack_require__(5);
 
 __webpack_require__(15);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 var Select = exports.Select = function Select(props) {
 
-    var arr = props.type === 'blade' ? _init._NAME : _init._TOWN;
+    var arr = props.type === 'blade' ? _init._NAME : _init.arrTown;
 
     return _react2.default.createElement(
-        'ul',
-        { className: 'select' },
-        arr.map(function (item, index) {
-            return _react2.default.createElement(
-                'li',
-                {
-                    key: index, onClick: function onClick() {
-                        return props.onSelect(item);
-                    } },
-                item
-            );
-        })
+        'div',
+        null,
+        props.type === 'blade' ? _react2.default.createElement(
+            'ul',
+            { className: 'select' },
+            arr.map(function (item, index) {
+                return _react2.default.createElement(
+                    'li',
+                    {
+                        key: index, onClick: function onClick() {
+                            return props.onSelect(item);
+                        } },
+                    item
+                );
+            })
+        ) : _react2.default.createElement(TownSelect, { arr: arr, onSelect: props.onSelect })
     );
 };
+
+var TownSelect = function (_React$Component) {
+    _inherits(TownSelect, _React$Component);
+
+    function TownSelect() {
+        var _ref;
+
+        _classCallCheck(this, TownSelect);
+
+        for (var _len = arguments.length, props = Array(_len), _key = 0; _key < _len; _key++) {
+            props[_key] = arguments[_key];
+        }
+
+        var _this = _possibleConstructorReturn(this, (_ref = TownSelect.__proto__ || Object.getPrototypeOf(TownSelect)).call.apply(_ref, [this].concat(props)));
+
+        var _this$props = _this.props,
+            arr = _this$props.arr,
+            type = _this$props.type,
+            name = '阿伐利提亚';
+
+        _this.state = {
+            arr: arr,
+            name: name,
+            types: arr[name]
+        };
+        return _this;
+    }
+
+    _createClass(TownSelect, [{
+        key: 'setTown',
+        value: function setTown(name) {
+            this.setState({
+                name: name,
+                types: this.props.arr[name]
+            });
+        }
+    }, {
+        key: 'setType',
+        value: function setType(type) {
+            this.props.onSelect(this.state.name, type);
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _state = this.state,
+                arr = _state.arr,
+                types = _state.types;
+
+
+            var townNode = [],
+                classNode = [];
+
+            for (var i in arr) {
+                townNode.push(_react2.default.createElement(
+                    'li',
+                    { key: i, onClick: this.setTown.bind(this, i) },
+                    i
+                ));
+            }for (var j in types) {
+                classNode.push(_react2.default.createElement(
+                    'li',
+                    { key: j, onClick: this.setType.bind(this, j) },
+                    j
+                ));
+            }return _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement(
+                    'ul',
+                    { className: 'select' },
+                    townNode
+                ),
+                _react2.default.createElement(
+                    'ul',
+                    { className: 'select', style: { marginTop: '20px' } },
+                    classNode
+                )
+            );
+        }
+    }]);
+
+    return TownSelect;
+}(_react2.default.Component);
 
 /***/ }),
 /* 34 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(16)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, ".menu .nav {\n  width: 200px;\n  margin: 20px;\n  text-align: center;\n  font-size: 18px; }\n  .menu .nav > li {\n    padding: 10px;\n    cursor: pointer; }\n    .menu .nav > li:hover {\n      background: #c0392b; }\n\n.select {\n  display: flex;\n  width: 240px;\n  padding: 0 20px;\n  flex-wrap: wrap;\n  justify-content: flex-start; }\n  .select > li {\n    padding: 3px 10px;\n    margin: 2px;\n    font-size: 14px;\n    background: rgba(255, 255, 255, 0.15);\n    cursor: pointer; }\n    .select > li:hover {\n      background: #c0392b; }\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 35 */
-/***/ (function(module, exports) {
-
-
-/**
- * When source maps are enabled, `style-loader` uses a link element with a data-uri to
- * embed the css on the page. This breaks all relative urls because now they are relative to a
- * bundle instead of the current page.
- *
- * One solution is to only use full urls, but that may be impossible.
- *
- * Instead, this function "fixes" the relative urls to be absolute according to the current page location.
- *
- * A rudimentary test suite is located at `test/fixUrls.js` and can be run via the `npm test` command.
- *
- */
-
-module.exports = function (css) {
-  // get current location
-  var location = typeof window !== "undefined" && window.location;
-
-  if (!location) {
-    throw new Error("fixUrls requires window.location");
-  }
-
-	// blank or null?
-	if (!css || typeof css !== "string") {
-	  return css;
-  }
-
-  var baseUrl = location.protocol + "//" + location.host;
-  var currentDir = baseUrl + location.pathname.replace(/\/[^\/]*$/, "/");
-
-	// convert each url(...)
-	/*
-	This regular expression is just a way to recursively match brackets within
-	a string.
-
-	 /url\s*\(  = Match on the word "url" with any whitespace after it and then a parens
-	   (  = Start a capturing group
-	     (?:  = Start a non-capturing group
-	         [^)(]  = Match anything that isn't a parentheses
-	         |  = OR
-	         \(  = Match a start parentheses
-	             (?:  = Start another non-capturing groups
-	                 [^)(]+  = Match anything that isn't a parentheses
-	                 |  = OR
-	                 \(  = Match a start parentheses
-	                     [^)(]*  = Match anything that isn't a parentheses
-	                 \)  = Match a end parentheses
-	             )  = End Group
-              *\) = Match anything and then a close parens
-          )  = Close non-capturing group
-          *  = Match anything
-       )  = Close capturing group
-	 \)  = Match a close parens
-
-	 /gi  = Get all matches, not the first.  Be case insensitive.
-	 */
-	var fixedCss = css.replace(/url\s*\(((?:[^)(]|\((?:[^)(]+|\([^)(]*\))*\))*)\)/gi, function(fullMatch, origUrl) {
-		// strip quotes (if they exist)
-		var unquotedOrigUrl = origUrl
-			.trim()
-			.replace(/^"(.*)"$/, function(o, $1){ return $1; })
-			.replace(/^'(.*)'$/, function(o, $1){ return $1; });
-
-		// already a full url? no change
-		if (/^(#|data:|http:\/\/|https:\/\/|file:\/\/\/)/i.test(unquotedOrigUrl)) {
-		  return fullMatch;
-		}
-
-		// convert the url to a full url
-		var newUrl;
-
-		if (unquotedOrigUrl.indexOf("//") === 0) {
-		  	//TODO: should we add protocol?
-			newUrl = unquotedOrigUrl;
-		} else if (unquotedOrigUrl.indexOf("/") === 0) {
-			// path should be relative to the base url
-			newUrl = baseUrl + unquotedOrigUrl; // already starts with '/'
-		} else {
-			// path should be relative to current directory
-			newUrl = currentDir + unquotedOrigUrl.replace(/^\.\//, ""); // Strip leading './'
-		}
-
-		// send back the fixed url(...)
-		return "url(" + JSON.stringify(newUrl) + ")";
-	});
-
-	// send back the fixed css
-	return fixedCss;
-};
-
-
-/***/ }),
-/* 36 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.All = undefined;
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _goods = __webpack_require__(37);
-
-var _init = __webpack_require__(7);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var All = exports.All = function All(props) {
-
-    var arr = (0, _init.initAll)(_goods._GOODS);
-
-    return _react2.default.createElement(
-        'table',
-        null,
-        _react2.default.createElement(
-            'thead',
-            null,
-            _react2.default.createElement(
-                'tr',
-                null,
-                _react2.default.createElement(
-                    'th',
-                    null,
-                    '\u5730\u533A'
-                ),
-                _react2.default.createElement(
-                    'th',
-                    null,
-                    '\u7C7B\u522B'
-                ),
-                _react2.default.createElement(
-                    'th',
-                    null,
-                    '\u540D\u79F0'
-                ),
-                _react2.default.createElement(
-                    'th',
-                    null,
-                    '\u8BF4\u660E'
-                )
-            )
-        ),
-        _react2.default.createElement(
-            'tbody',
-            null,
-            arr.length > 0 && arr.map(function (item, index) {
-                return _react2.default.createElement(Tr, { key: index, item: item });
-            })
-        )
-    );
-};
-
-var Tr = function Tr(props) {
-    return _react2.default.createElement(
-        'tr',
-        { className: props.item.need ? 'need' : '' },
-        _react2.default.createElement(
-            'td',
-            null,
-            props.item.town
-        ),
-        _react2.default.createElement(
-            'td',
-            null,
-            props.item.class
-        ),
-        _react2.default.createElement(
-            'td',
-            null,
-            props.item.name
-        ),
-        _react2.default.createElement(
-            'td',
-            null,
-            props.item.desc
-        )
-    );
-};
-
-/***/ }),
-/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19231,7 +19167,7 @@ var _GOODS = exports._GOODS = {
     '阿伐利提亚': {
         '主食': {
             buff: '战斗经验值提升10%',
-            goods: [{ name: '阿伐利提亚什锦面', desc: '仅限晚上出售' }, { name: '多汁包子', desc: '完成彭诺回家支线开启' }, { name: '弹弹炒饭', desc: '完成彭诺回家支线开启' }, { name: '巨大蘑菇派', desc: '完成彭诺回家支线开启' }, { name: '阳光包子', desc: '完成彭诺回家支线开启', need: true }, { name: '美味香肠包', desc: '完成彭诺回家支线开启', need: true }]
+            goods: [{ name: '阿伐利提亚什锦面', desc: '仅晚上出售，无关产权' }, { name: '多汁包子' }, { name: '弹弹炒饭' }, { name: '巨大蘑菇派' }, { name: '阳光包子', need: true }, { name: '美味香肠包', need: true }]
         },
         '鱼': {
             buff: '获得心相点数时额外获得1点',
@@ -19467,7 +19403,231 @@ var _GOODS = exports._GOODS = {
 };
 
 /***/ }),
+/* 35 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+// 人物表
+var _BLADE = exports._BLADE = [{ name: '莱克斯', class: ['饮料', '美术品'], goods: ['托里格风味塔尔塔里烤鱼', '珊瑚黑白棋'] }, { name: '焰', class: ['蔬菜', '书籍'], goods: ['赛利奥茶', '木纹阿尔卑斯长号'] }, { name: '光', class: ['甜品', '美术品'], goods: ['云海蟹奶油土豆饼', '最后的合唱'] }, { name: '尼娅(队友)', class: ['鱼类', '纺织品'], goods: ['奶油橘味煎饼', '斯佩比亚熊木雕'] }, { name: '尼娅(异刃)', class: ['鱼类', '乐器'], goods: ['雪孩子土豆色拉', '秘密潜入'] }, { name: '白虎', class: ['肉类', '桌游'], goods: ['兴奋翻车鱼干', '万年杉树古琴'] }, { name: '虎', class: ['饮料', '乐器'], goods: ['多汁包子', '镂空披肩'] }, { name: '花JS', class: ['主食', '乐器'], goods: ['泡泡果汁', '圆圆沙锤'] }, { name: '花JK', class: ['蔬菜', '美术品'], goods: ['满天宝石挞', '玄武纹棉布'] }, { name: '花JD', class: ['主食', '纺织品'], goods: ['迷情蜜瓜冰糕', '风花梳子'] }, { name: '梅勒芙', class: ['蔬菜', '美术品'], goods: ['炸肉排', '蒸汽管风琴'] }, { name: '伽具土', class: ['甜品', '化妆品'], goods: ['融雪千层饼', '阿鲁斯油护手霜'] }, { name: '齐格', class: ['肉类', '纺织品'], goods: ['英雄阿德尔烤饼', '雪花水晶壶'] }, { name: '彩歌', class: ['肉类', '书籍'], goods: ['蛋黄酱烤章鱼', '星月唇膏'] }, { name: '朱雀', class: ['鱼类', '桌游'], goods: ['树染缠腰布', '烤全深渊蝶鲨'] }, { name: '绵津见', class: ['甜品', '美术品'], goods: ['熔岩馅饼', '莫特科拉人偶'] }, { name: '水分', class: ['甜品', '书籍'], goods: ['高级雪花奶酪蛋糕', '卷卷假睫毛'] }, { name: '星织', class: ['蔬菜', '桌游'], goods: ['炖蔬菜浓汤', '雪花闪亮香水'] }, { name: '天威', class: ['饮料', '桌游	'], goods: ['月光香蕉牛奶', '宝石台球'] }, { name: '重音', class: ['主食', '化妆品'], goods: ['妖精菲尔梅莉的雕像', '天文占卜大辞典'] }, { name: 'KOSMOS', class: ['主食', '桌游'], goods: ['剑斗士相扑', '主任咖喱'] }, { name: '八重切', class: ['肉类', '书籍'], goods: ['炭烤铁火鸟', '隐匿勇者嘉拉德的肖像画'] }, { name: '玛瑙', class: ['饮料', '美术品'], goods: ['香味干金枪鱼头汤', '假肢阿乔的悲惨世界'] }, { name: '韦驮天', class: ['主食', '化妆品'], goods: ['巨大蘑菇派', '冰霜迪法露'] }, { name: '石榴', class: ['饮料', '化妆品'], goods: ['花香巴伐利亚奶羹', '海螺假发'] }, { name: '蓟', class: ['饮料', '书籍'], goods: ['蒸汽雪花凉拌色拉', '蛋白珊瑚口红'] }, { name: '结', class: ['鱼类', '化妆品'], goods: ['蜜豆牡丹饼', '托里格雪花围巾'] }, { name: '七冰', class: ['甜品', '化妆品'], goods: ['托里格鲁特琴', '蒸汽管风琴'] }, { name: '宇迦', class: ['鱼类', '乐器'], goods: ['三色丸子', '意外之失'] }, { name: '雷鼓', class: ['肉类', '乐器'], goods: ['蜂蜜牛奶', '金属小鼓'] }, { name: '伊吹', class: ['蔬菜', '化妆品'], goods: ['肉甜椒镶菜', '雪花闪亮香水'] }, { name: '萤', class: ['蔬菜', '美术品'], goods: ['镂空花纹的树叶头巾', '饼雪团子'] }, { name: '凛音', class: ['甜品', '纺织品'], goods: ['阿卡狄亚茶', '艾菲姆的铜像'] }, { name: '纽兹', class: ['肉类', '乐器'], goods: ['军事区域', '活力炒电击里脊肉'] }, { name: '式', class: ['蔬菜', '书籍'], goods: ['托里格风味腌菜', '利贝拉里塔斯的生活'] }, { name: '时叶', class: ['鱼类', '纺织品'], goods: ['深焙黑咖啡', '冯斯低音提琴'] }, { name: '月', class: ['蔬菜', '化妆品'], goods: ['果肉包', '洛修利亚冰魔方'] }, { name: '鸣', class: ['甜品', '纺织品'], goods: ['香脆冰雪酱瓜', '王家羊毛'] }, { name: '雄黄', class: ['甜品', '纺织品'], goods: ['霓虹葡萄布丁', '帝国秘密温泉一日游'] }, { name: '力男', class: ['主食', '书籍'], goods: ['糖醋海洋茶鱼', '雪原的诺彭强盗'] }, { name: '红莲', class: ['肉类', '乐器'], goods: ['星形肉排', '玫拉姆森林冒险记'] }, { name: '宫比罗', class: ['鱼类', '美术品'], goods: ['慢火煎芬芳虾', '黑色花田'] }, { name: '婆娑罗', class: ['饮料', '美术品'], goods: ['雪醋淋冰包心菜', '赤杆三味线'] }];
+
+/***/ }),
+/* 36 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(16)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, ".menu .nav {\n  width: 200px;\n  margin: 20px;\n  text-align: center;\n  font-size: 18px; }\n  .menu .nav > li {\n    padding: 10px;\n    cursor: pointer; }\n    .menu .nav > li:hover {\n      background: #c0392b; }\n\n.select {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  width: 240px;\n  padding: 0 20px;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  -webkit-box-pack: start;\n      -ms-flex-pack: start;\n          justify-content: flex-start; }\n  .select > li {\n    padding: 3px 10px;\n    margin: 2px;\n    font-size: 14px;\n    background: rgba(255, 255, 255, 0.15);\n    cursor: pointer; }\n    .select > li:hover {\n      background: #c0392b; }\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 37 */
+/***/ (function(module, exports) {
+
+
+/**
+ * When source maps are enabled, `style-loader` uses a link element with a data-uri to
+ * embed the css on the page. This breaks all relative urls because now they are relative to a
+ * bundle instead of the current page.
+ *
+ * One solution is to only use full urls, but that may be impossible.
+ *
+ * Instead, this function "fixes" the relative urls to be absolute according to the current page location.
+ *
+ * A rudimentary test suite is located at `test/fixUrls.js` and can be run via the `npm test` command.
+ *
+ */
+
+module.exports = function (css) {
+  // get current location
+  var location = typeof window !== "undefined" && window.location;
+
+  if (!location) {
+    throw new Error("fixUrls requires window.location");
+  }
+
+	// blank or null?
+	if (!css || typeof css !== "string") {
+	  return css;
+  }
+
+  var baseUrl = location.protocol + "//" + location.host;
+  var currentDir = baseUrl + location.pathname.replace(/\/[^\/]*$/, "/");
+
+	// convert each url(...)
+	/*
+	This regular expression is just a way to recursively match brackets within
+	a string.
+
+	 /url\s*\(  = Match on the word "url" with any whitespace after it and then a parens
+	   (  = Start a capturing group
+	     (?:  = Start a non-capturing group
+	         [^)(]  = Match anything that isn't a parentheses
+	         |  = OR
+	         \(  = Match a start parentheses
+	             (?:  = Start another non-capturing groups
+	                 [^)(]+  = Match anything that isn't a parentheses
+	                 |  = OR
+	                 \(  = Match a start parentheses
+	                     [^)(]*  = Match anything that isn't a parentheses
+	                 \)  = Match a end parentheses
+	             )  = End Group
+              *\) = Match anything and then a close parens
+          )  = Close non-capturing group
+          *  = Match anything
+       )  = Close capturing group
+	 \)  = Match a close parens
+
+	 /gi  = Get all matches, not the first.  Be case insensitive.
+	 */
+	var fixedCss = css.replace(/url\s*\(((?:[^)(]|\((?:[^)(]+|\([^)(]*\))*\))*)\)/gi, function(fullMatch, origUrl) {
+		// strip quotes (if they exist)
+		var unquotedOrigUrl = origUrl
+			.trim()
+			.replace(/^"(.*)"$/, function(o, $1){ return $1; })
+			.replace(/^'(.*)'$/, function(o, $1){ return $1; });
+
+		// already a full url? no change
+		if (/^(#|data:|http:\/\/|https:\/\/|file:\/\/\/)/i.test(unquotedOrigUrl)) {
+		  return fullMatch;
+		}
+
+		// convert the url to a full url
+		var newUrl;
+
+		if (unquotedOrigUrl.indexOf("//") === 0) {
+		  	//TODO: should we add protocol?
+			newUrl = unquotedOrigUrl;
+		} else if (unquotedOrigUrl.indexOf("/") === 0) {
+			// path should be relative to the base url
+			newUrl = baseUrl + unquotedOrigUrl; // already starts with '/'
+		} else {
+			// path should be relative to current directory
+			newUrl = currentDir + unquotedOrigUrl.replace(/^\.\//, ""); // Strip leading './'
+		}
+
+		// send back the fixed url(...)
+		return "url(" + JSON.stringify(newUrl) + ")";
+	});
+
+	// send back the fixed css
+	return fixedCss;
+};
+
+
+/***/ }),
 /* 38 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.All = undefined;
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _init = __webpack_require__(5);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var All = exports.All = function All(props) {
+
+    var arr = (0, _init.initAll)();
+
+    return _react2.default.createElement(
+        'table',
+        null,
+        _react2.default.createElement(
+            'thead',
+            null,
+            _react2.default.createElement(
+                'tr',
+                null,
+                _react2.default.createElement(
+                    'th',
+                    null,
+                    '\u5730\u533A'
+                ),
+                _react2.default.createElement(
+                    'th',
+                    null,
+                    '\u7C7B\u522B'
+                ),
+                _react2.default.createElement(
+                    'th',
+                    null,
+                    '\u540D\u79F0'
+                ),
+                _react2.default.createElement(
+                    'th',
+                    null,
+                    '\u5F02\u5203'
+                ),
+                _react2.default.createElement(
+                    'th',
+                    null,
+                    '\u8BF4\u660E'
+                )
+            )
+        ),
+        _react2.default.createElement(
+            'tbody',
+            null,
+            arr.length > 0 && arr.map(function (item, index) {
+                return _react2.default.createElement(Tr, { key: index, item: item });
+            })
+        )
+    );
+};
+
+var Tr = function Tr(props) {
+    return _react2.default.createElement(
+        'tr',
+        { className: props.item.need ? 'need' : '' },
+        _react2.default.createElement(
+            'td',
+            null,
+            props.item.town
+        ),
+        _react2.default.createElement(
+            'td',
+            null,
+            props.item.class
+        ),
+        _react2.default.createElement(
+            'td',
+            null,
+            props.item.name
+        ),
+        _react2.default.createElement(
+            'td',
+            null,
+            props.item.blade
+        ),
+        _react2.default.createElement(
+            'td',
+            null,
+            props.item.desc
+        )
+    );
+};
+
+/***/ }),
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19482,15 +19642,13 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _blade = __webpack_require__(39);
-
-var _init = __webpack_require__(7);
+var _init = __webpack_require__(5);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Blade = exports.Blade = function Blade(props) {
 
-    var obj = (0, _init.initBlade)(_blade._BLADE),
+    var obj = (0, _init.initBlade)(),
         name = props.name || '莱克斯',
         info = obj[name];
 
@@ -19498,12 +19656,12 @@ var Blade = exports.Blade = function Blade(props) {
         'div',
         { className: 'text' },
         _react2.default.createElement(
-            'h1',
+            'h3',
             null,
             name
         ),
         _react2.default.createElement(
-            'p',
+            'h4',
             null,
             '\u559C\u6B22\u7684\u7C7B\u522B\uFF1A',
             info.class.join('、')
@@ -19532,6 +19690,11 @@ var Blade = exports.Blade = function Blade(props) {
                             'td',
                             null,
                             item.class
+                        ),
+                        _react2.default.createElement(
+                            'td',
+                            null,
+                            item.desc
                         )
                     );
                 })
@@ -19539,19 +19702,6 @@ var Blade = exports.Blade = function Blade(props) {
         )
     );
 };
-
-/***/ }),
-/* 39 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-// 人物表
-var _BLADE = exports._BLADE = [{ name: '莱克斯', class: ['饮料', '美术品'], goods: ['托里格风味塔尔塔里烤鱼', '珊瑚黑白棋'] }, { name: '焰', class: ['蔬菜', '书籍'], goods: ['赛利奥茶', '木纹阿尔卑斯长号'] }, { name: '光', class: ['甜品', '美术品'], goods: ['云海蟹土豆饼', '最后的合唱'] }, { name: '尼娅(队友)', class: ['鱼类', '纺织品'], goods: ['奶油橘味煎饼', '斯佩比亚熊木雕'] }, { name: '尼娅(异刃)', class: ['鱼类', '乐器'], goods: ['雪孩子土豆色拉', '秘密潜入'] }, { name: '白虎', class: ['肉类', '桌游'], goods: ['兴奋翻车鱼干', '万年杉树古琴'] }, { name: '虎', class: ['饮料', '乐器'], goods: ['多汁包子', '镂空披肩'] }, { name: '花JS', class: ['主食', '乐器'], goods: ['泡泡果汁', '圆圆沙锤'] }, { name: '花JK', class: ['蔬菜', '美术品'], goods: ['满天宝石挞', '玄武纹棉布'] }, { name: '花JD', class: ['主食', '纺织品'], goods: ['迷情蜜瓜冰糕', '风花梳子'] }, { name: '梅勒芙', class: ['蔬菜', '美术品'], goods: ['炸肉排', '蒸汽管风琴'] }, { name: '伽具土', class: ['甜品', '化妆品'], goods: ['融雪千层饼', '阿鲁斯油护手霜'] }, { name: '齐格', class: ['肉类', '纺织品'], goods: ['英雄阿德尔烤饼', '雪花水晶壶'] }, { name: '彩歌', class: ['肉类', '书籍'], goods: ['蛋黄酱烤章鱼', '星月唇膏'] }, { name: '朱雀', class: ['鱼类', '桌游'], goods: ['树染缠腰布', '烤全深渊蝶鲨'] }, { name: '绵津见', class: ['甜品', '美术品'], goods: ['熔岩馅饼', '莫特科拉人偶'] }, { name: '水分', class: ['甜品', '书籍'], goods: ['高级雪花奶酪蛋糕', '卷卷假睫毛'] }, { name: '星织', class: ['蔬菜', '桌游'], goods: ['炖蔬菜浓汤', '雪花闪亮香水'] }, { name: '天威', class: ['饮料', '桌游	'], goods: ['月光香蕉牛奶', '宝石台球'] }, { name: '重音', class: ['主食', '化妆品'], goods: ['妖精菲尔梅莉的雕像', '天文占卜大辞典'] }, { name: 'KOSMOS', class: ['主食', '桌游'], goods: ['剑斗士相扑', '主任咖喱'] }, { name: '八重切', class: ['肉类', '书籍'], goods: ['炭烤铁火鸟', '隐匿勇者嘉拉德的肖像画'] }, { name: '玛瑙', class: ['饮料', '美术品'], goods: ['香味干金枪鱼头汤', '假肢阿乔的悲惨世界'] }, { name: '韦驮天', class: ['主食', '化妆品'], goods: ['巨大蘑菇派', '冰霜迪法露'] }, { name: '石榴', class: ['饮料', '化妆品'], goods: ['花香巴伐利亚奶羹', '海螺假发'] }, { name: '蓟', class: ['饮料', '书籍'], goods: ['蒸汽雪花凉拌色拉', '蛋白珊瑚口红'] }, { name: '结', class: ['鱼类', '化妆品'], goods: ['蜜豆牡丹饼', '托里格雪花围巾'] }, { name: '七冰', class: ['甜品', '化妆品'], goods: ['托里格鲁特琴', '蒸汽管风琴'] }, { name: '宇迦', class: ['鱼类', '乐器'], goods: ['三色丸子', '意外之失'] }, { name: '雷鼓', class: ['肉类', '乐器'], goods: ['蜂蜜牛奶', '金属小鼓'] }, { name: '伊吹', class: ['蔬菜', '化妆品'], goods: ['肉甜椒镶菜', '雪花闪亮香水'] }, { name: '萤', class: ['蔬菜', '美术品'], goods: ['镂空花纹的树叶头巾', '饼雪团子'] }, { name: '凛音', class: ['甜品', '纺织品'], goods: ['阿卡狄亚茶', '艾菲姆的铜像'] }, { name: '纽兹', class: ['肉类', '乐器'], goods: ['军事区域', '活力炒电击里脊肉'] }, { name: '式', class: ['蔬菜', '书籍'], goods: ['托里格风味腌菜', '利贝拉里塔斯的生活'] }, { name: '时叶', class: ['鱼类', '纺织品'], goods: ['深焙黑咖啡', '冯斯低音提琴'] }, { name: '月', class: ['蔬菜', '化妆品'], goods: ['果肉包', '洛修利亚冰魔方'] }, { name: '鸣', class: ['甜品', '纺织品'], goods: ['香脆冰雪酱瓜', '王家羊毛'] }, { name: '雄黄', class: ['甜品', '纺织品'], goods: ['霓虹葡萄布丁', '帝国秘密温泉一日游'] }, { name: '力男', class: ['主食', '书籍'], goods: ['糖醋海洋茶鱼', '雪原的诺彭强盗'] }, { name: '红莲', class: ['肉类', '乐器'], goods: ['星形肉排', '玫拉姆森林冒险记'] }, { name: '宫比罗', class: ['鱼类', '美术品'], goods: ['慢火煎芬芳虾', '黑色花田'] }, { name: '婆娑罗', class: ['饮料', '美术品'], goods: ['雪醋淋冰包心菜', '赤杆三味线'] }];
 
 /***/ }),
 /* 40 */
@@ -19569,11 +19719,61 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _init = __webpack_require__(5);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Town = exports.Town = function Town(props) {
 
-    return _react2.default.createElement('div', null);
+    var obj = (0, _init.initTown)(),
+        name = props.name || '阿伐利提亚',
+        type = props.type || '主食',
+        info = obj[name][type];
+
+    return _react2.default.createElement(
+        'div',
+        { className: 'town' },
+        _react2.default.createElement(
+            'h3',
+            null,
+            name + '\u2014\u2014' + type
+        ),
+        _react2.default.createElement(
+            'h4',
+            null,
+            '\u4EA7\u6743\uFF1A',
+            info.buff
+        ),
+        _react2.default.createElement(
+            'table',
+            null,
+            _react2.default.createElement(
+                'tbody',
+                null,
+                info.goods.map(function (item, index) {
+                    return _react2.default.createElement(
+                        'tr',
+                        { key: index, className: item.need ? 'need' : '' },
+                        _react2.default.createElement(
+                            'td',
+                            null,
+                            item.name
+                        ),
+                        _react2.default.createElement(
+                            'td',
+                            null,
+                            item.blade
+                        ),
+                        _react2.default.createElement(
+                            'td',
+                            null,
+                            item.desc
+                        )
+                    );
+                })
+            )
+        )
+    );
 };
 
 /***/ }),
@@ -19597,8 +19797,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/sass-loader/lib/loader.js!./app.scss", function() {
-			var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/sass-loader/lib/loader.js!./app.scss");
+		module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/postcss-loader/lib/index.js??ref--1-2!../node_modules/sass-loader/lib/loader.js!./app.scss", function() {
+			var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/postcss-loader/lib/index.js??ref--1-2!../node_modules/sass-loader/lib/loader.js!./app.scss");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -19616,7 +19816,7 @@ exports = module.exports = __webpack_require__(16)(undefined);
 
 
 // module
-exports.push([module.i, "@charset \"UTF-8\";\nhtml {\n  position: relative; }\n\n* {\n  box-sizing: border-box; }\n\nbody {\n  margin: 0;\n  padding: 0;\n  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;\n  background: #e74c3c;\n  color: #fff; }\n\nul,\nol,\ndl {\n  padding: 0;\n  margin: 0; }\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\np {\n  margin-top: 0; }\n\na img {\n  border: none; }\n\np {\n  margin: 0;\n  padding: 0;\n  word-break: break-all; }\n\nh1 {\n  margin: 0;\n  padding: 0;\n  font-size: 1rem; }\n\nform {\n  margin: 0;\n  padding: 0; }\n\ninput,\nselect {\n  outline: none; }\n\na {\n  cursor: pointer;\n  text-decoration: none; }\n\ntextarea {\n  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;\n  resize: none; }\n\ninput,\nbutton,\nselect,\ntextarea {\n  outline: none; }\n\nbutton {\n  border: 0;\n  border-radius: 0;\n  background-color: transparent;\n  cursor: pointer;\n  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif; }\n\nhr {\n  border: 0;\n  margin: 0 auto; }\n\nul {\n  list-style: none; }\n\ntable {\n  table-layout: fixed;\n  min-width: 400px; }\n\nth {\n  text-align: left;\n  height: 35px;\n  font-weight: 500; }\n\ntd {\n  height: 35px;\n  color: #fff;\n  border-bottom: solid 1px rgba(255, 255, 255, 0.1); }\n\n.need {\n  opacity: .6; }\n\n.flex {\n  display: flex; }\n\n.text {\n  padding-top: 32px; }\n  .text h1 {\n    margin-bottom: 10px; }\n\n::-webkit-scrollbar {\n  width: 10px; }\n\n/*定义滚动条轨道 内阴影+圆角*/\n::-webkit-scrollbar-track {\n  background-color: #e74c3c; }\n\n/*定义滑块 内阴影+圆角*/\n::-webkit-scrollbar-thumb {\n  background-color: rgba(255, 255, 255, 0.7); }\n", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\nhtml {\n  position: relative; }\n\n* {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box; }\n\nbody {\n  margin: 0;\n  padding: 0;\n  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;\n  background: #e74c3c;\n  color: #fff; }\n\nul,\nol,\ndl {\n  padding: 0;\n  margin: 0; }\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\np {\n  margin-top: 0; }\n\na img {\n  border: none; }\n\np {\n  margin: 0;\n  padding: 0;\n  word-break: break-all; }\n\nh1 {\n  margin: 0;\n  padding: 0;\n  font-size: 1rem; }\n\nh2,\nh3,\nh4 {\n  margin: 0;\n  padding: 0; }\n\nh4 {\n  margin-top: 8px; }\n\nform {\n  margin: 0;\n  padding: 0; }\n\ninput,\nselect {\n  outline: none; }\n\na {\n  cursor: pointer;\n  text-decoration: none; }\n\ntextarea {\n  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;\n  resize: none; }\n\ninput,\nbutton,\nselect,\ntextarea {\n  outline: none; }\n\nbutton {\n  border: 0;\n  border-radius: 0;\n  background-color: transparent;\n  cursor: pointer;\n  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif; }\n\nhr {\n  border: 0;\n  margin: 0 auto; }\n\nul {\n  list-style: none; }\n\ntable {\n  table-layout: fixed;\n  border-collapse: collapse; }\n\nth {\n  text-align: left;\n  padding: 6px 12px 6px 0;\n  font-weight: 500; }\n\ntd {\n  padding: 6px 12px 6px 0;\n  color: #fff;\n  border-bottom: solid 1px rgba(255, 255, 255, 0.1); }\n\n.need {\n  opacity: .6; }\n\n.flex {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex; }\n\n.text {\n  padding-top: 32px; }\n  .text h1 {\n    margin-bottom: 10px; }\n\n.town {\n  margin: 20px 0 0 0; }\n\n::-webkit-scrollbar {\n  width: 10px; }\n\n/*定义滚动条轨道 内阴影+圆角*/\n::-webkit-scrollbar-track {\n  background-color: #e74c3c; }\n\n/*定义滑块 内阴影+圆角*/\n::-webkit-scrollbar-thumb {\n  background-color: rgba(255, 255, 255, 0.7); }\n", ""]);
 
 // exports
 

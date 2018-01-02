@@ -1,18 +1,17 @@
 import React from 'react'
-import { _BLADE } from '../config/blade'
 import { initBlade } from '../config/init'
 
 
 export const Blade = props => {
 
-    const obj = initBlade(_BLADE),
+    const obj = initBlade(),
         name = props.name || '莱克斯',
         info = obj[name]
 
     return (
         <div className='text'>
-            <h1>{name}</h1>
-            <p>喜欢的类别：{info.class.join('、')}</p>
+            <h3>{name}</h3>
+            <h4>喜欢的类别：{info.class.join('、')}</h4>
             <table>
                 <tbody>
                     {info.goods.map((item, index) => <tr key={index} className={item.need ? 'need' : ''}>

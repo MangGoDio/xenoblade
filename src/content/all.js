@@ -1,10 +1,9 @@
 import React from 'react'
-import { _GOODS } from '../config/goods'
 import { initAll } from '../config/init'
 
 export const All = props => {
 
-    const arr = initAll(_GOODS)
+    const arr = initAll()
 
     return (
         <table>
@@ -13,6 +12,7 @@ export const All = props => {
                     <th>地区</th>
                     <th>类别</th>
                     <th>名称</th>
+                    <th>异刃</th>
                     <th>说明</th>
                 </tr>
             </thead>
@@ -28,6 +28,7 @@ const Tr = props =>
         <td>{props.item.town}</td>
         <td>{props.item.class}</td>
         <td>{props.item.name}</td>
+        <td>{props.item.blade}</td>
         <td>{props.item.desc}</td>
     </tr>
 
