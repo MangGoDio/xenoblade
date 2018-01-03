@@ -1,3 +1,5 @@
+$color: #7ad05e;
+$hover: #72bd59;
 .menu {
     padding: 0 20px;
     .nav {
@@ -9,7 +11,10 @@
             padding: 10px;
             cursor: pointer;
             &:hover {
-                background: #c0392b;
+                background: $hover;
+            }
+            &.active {
+                background: $hover;
             }
         }
     }
@@ -27,7 +32,10 @@
         background: rgba(255, 255, 255, .15);
         cursor: pointer;
         &:hover {
-            background: #c0392b;
+            background: $hover;
+        }
+        &.active {
+            background: $hover;
         }
     }
 }

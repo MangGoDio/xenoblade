@@ -10,7 +10,7 @@ class App extends React.Component {
     constructor(...props) {
         super(...props)
         this.state = {
-            menu: 'blade',
+            menu: 'all',
             name: '',
             type: '',
             show: false,
@@ -35,7 +35,7 @@ class App extends React.Component {
     }
 
     render() {
-        console.log(this.state)
+
         const { menu, name, type, show } = this.state,
             Content = (() => {
                 switch (menu) {
@@ -51,9 +51,11 @@ class App extends React.Component {
                 }
             })
 
+        const info = { menu, name, type, show }
+
         return (
             <div className='flex'>
-                <Menu menu={menu} changeMenu={this.changeMenu} onSelect={this.onSelect} show={show} />
+                <Menu menu={menu} changeMenu={this.changeMenu} onSelect={this.onSelect} {...info} />
                 <div className='menu-btn' onClick={this.toggleMenu}>菜单</div>
                 <Content menu={menu} />
             </div>

@@ -5,16 +5,16 @@ import './menu.scss'
 
 export const Select = props => {
 
-    let arr = props.type === 'blade' ? _NAME : arrTown
+    let arr = props.menu === 'blade' ? _NAME : arrTown
 
     return (
         <div>
-            {props.type === 'blade' ? (
+            {props.menu === 'blade' ? (
                 <ul className='select'>
                     {arr.map((item, index) => <li
                         key={index} onClick={() => props.onSelect(item)}>{item}</li>)}
                 </ul>
-            ) : <TownSelect arr={arr} onSelect={props.onSelect} />}
+            ) : <TownSelect arr={arr} onSelect={props.onSelect} {...props} />}
         </div>
     )
 }

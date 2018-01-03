@@ -1555,6 +1555,8 @@ module.exports = __webpack_require__(19);
 "use strict";
 
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(1);
@@ -1598,7 +1600,7 @@ var App = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (_ref = App.__proto__ || Object.getPrototypeOf(App)).call.apply(_ref, [this].concat(props)));
 
         _this.state = {
-            menu: 'blade',
+            menu: 'all',
             name: '',
             type: '',
             show: false
@@ -1629,8 +1631,6 @@ var App = function (_React$Component) {
     }, {
         key: 'render',
         value: function render() {
-            console.log(this.state);
-
             var _state = this.state,
                 menu = _state.menu,
                 name = _state.name,
@@ -1647,10 +1647,12 @@ var App = function (_React$Component) {
                 }
             };
 
+            var info = { menu: menu, name: name, type: type, show: show };
+
             return _react2.default.createElement(
                 'div',
                 { className: 'flex' },
-                _react2.default.createElement(_menu.Menu, { menu: menu, changeMenu: this.changeMenu, onSelect: this.onSelect, show: show }),
+                _react2.default.createElement(_menu.Menu, _extends({ menu: menu, changeMenu: this.changeMenu, onSelect: this.onSelect }, info)),
                 _react2.default.createElement(
                     'div',
                     { className: 'menu-btn', onClick: this.toggleMenu },
@@ -18986,6 +18988,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Menu = undefined;
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
@@ -18996,7 +19000,7 @@ __webpack_require__(15);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var config = [{ id: 'blade', name: '查询喜好' }, { id: 'town', name: '查询城镇' }, { id: 'all', name: '物品一览' }];
+var config = [{ id: 'all', name: '物品一览' }, { id: 'blade', name: '查询喜好' }, { id: 'town', name: '查询城镇' }];
 
 var Menu = exports.Menu = function Menu(props) {
     return _react2.default.createElement(
@@ -19006,10 +19010,10 @@ var Menu = exports.Menu = function Menu(props) {
             'ul',
             { className: 'nav' },
             config.map(function (item, index) {
-                return _react2.default.createElement(Li, { key: index, item: item, changeMenu: props.changeMenu });
+                return _react2.default.createElement(Li, { key: index, active: props.menu, item: item, changeMenu: props.changeMenu });
             })
         ),
-        props.menu !== 'all' && _react2.default.createElement(_select.Select, { type: props.menu, onSelect: props.onSelect }),
+        props.menu !== 'all' && _react2.default.createElement(_select.Select, _extends({}, props, { onSelect: props.onSelect })),
         _react2.default.createElement(
             'p',
             { style: { marginTop: '20px' } },
@@ -19026,14 +19030,10 @@ var Li = function Li(props) {
 
     return _react2.default.createElement(
         'li',
-        { onClick: function onClick() {
+        { className: props.active === id ? 'active' : '', onClick: function onClick() {
                 return props.changeMenu(id);
             } },
-        _react2.default.createElement(
-            'div',
-            null,
-            name
-        )
+        name
     );
 };
 
@@ -19050,6 +19050,8 @@ Object.defineProperty(exports, "__esModule", {
 exports.Select = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _react = __webpack_require__(1);
 
@@ -19069,12 +19071,12 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var Select = exports.Select = function Select(props) {
 
-    var arr = props.type === 'blade' ? _init._NAME : _init.arrTown;
+    var arr = props.menu === 'blade' ? _init._NAME : _init.arrTown;
 
     return _react2.default.createElement(
         'div',
         null,
-        props.type === 'blade' ? _react2.default.createElement(
+        props.menu === 'blade' ? _react2.default.createElement(
             'ul',
             { className: 'select' },
             arr.map(function (item, index) {
@@ -19087,7 +19089,7 @@ var Select = exports.Select = function Select(props) {
                     item
                 );
             })
-        ) : _react2.default.createElement(TownSelect, { arr: arr, onSelect: props.onSelect })
+        ) : _react2.default.createElement(TownSelect, _extends({ arr: arr, onSelect: props.onSelect }, props))
     );
 };
 
@@ -19446,7 +19448,7 @@ exports = module.exports = __webpack_require__(16)(undefined);
 
 
 // module
-exports.push([module.i, ".menu {\n  padding: 0 20px; }\n  .menu .nav {\n    width: 240px;\n    margin: 20px 0;\n    text-align: center;\n    font-size: 18px; }\n    .menu .nav > li {\n      padding: 10px;\n      cursor: pointer; }\n      .menu .nav > li:hover {\n        background: #c0392b; }\n\n.select {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  width: 240px;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  -webkit-box-pack: start;\n      -ms-flex-pack: start;\n          justify-content: flex-start; }\n  .select > li {\n    padding: 3px 10px;\n    margin: 2px;\n    font-size: 14px;\n    background: rgba(255, 255, 255, 0.15);\n    cursor: pointer; }\n    .select > li:hover {\n      background: #c0392b; }\n\n@media screen and (max-width: 500px) {\n  .select {\n    width: 100%; }\n    .select > li {\n      padding: 4px 10px;\n      margin: 4px; } }\n", ""]);
+exports.push([module.i, ".menu {\n  padding: 0 20px; }\n  .menu .nav {\n    width: 240px;\n    margin: 20px 0;\n    text-align: center;\n    font-size: 18px; }\n    .menu .nav > li {\n      padding: 10px;\n      cursor: pointer; }\n      .menu .nav > li:hover {\n        background: #72bd59; }\n      .menu .nav > li.active {\n        background: #72bd59; }\n\n.select {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  width: 240px;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  -webkit-box-pack: start;\n      -ms-flex-pack: start;\n          justify-content: flex-start; }\n  .select > li {\n    padding: 3px 10px;\n    margin: 2px;\n    font-size: 14px;\n    background: rgba(255, 255, 255, 0.15);\n    cursor: pointer; }\n    .select > li:hover {\n      background: #72bd59; }\n    .select > li.active {\n      background: #72bd59; }\n\n@media screen and (max-width: 500px) {\n  .select {\n    width: 100%; }\n    .select > li {\n      padding: 4px 10px;\n      margin: 4px; } }\n", ""]);
 
 // exports
 
@@ -19828,7 +19830,7 @@ exports = module.exports = __webpack_require__(16)(undefined);
 
 
 // module
-exports.push([module.i, "@charset \"UTF-8\";\nhtml {\n  position: relative; }\n\n* {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box; }\n\nbody {\n  margin: 0;\n  padding: 0;\n  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;\n  background: #e74c3c;\n  color: #fff; }\n\nul,\nol,\ndl {\n  padding: 0;\n  margin: 0; }\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\np {\n  margin-top: 0; }\n\na img {\n  border: none; }\n\np {\n  margin: 0;\n  padding: 0;\n  word-break: break-all; }\n\nh1 {\n  margin: 0;\n  padding: 0;\n  font-size: 1rem; }\n\nh2,\nh3,\nh4 {\n  margin: 0;\n  padding: 0; }\n\nh4 {\n  margin-top: 8px; }\n\nform {\n  margin: 0;\n  padding: 0; }\n\ninput,\nselect {\n  outline: none; }\n\na {\n  cursor: pointer;\n  text-decoration: none; }\n\ntextarea {\n  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;\n  resize: none; }\n\ninput,\nbutton,\nselect,\ntextarea {\n  outline: none; }\n\nbutton {\n  border: 0;\n  border-radius: 0;\n  background-color: transparent;\n  cursor: pointer;\n  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif; }\n\nhr {\n  border: 0;\n  margin: 0 auto; }\n\nul {\n  list-style: none; }\n\ntable {\n  table-layout: fixed;\n  border-collapse: collapse; }\n\nth {\n  text-align: left;\n  padding: 6px 12px 6px 0;\n  font-weight: 500; }\n\ntd {\n  padding: 6px 12px 6px 0;\n  color: #fff;\n  border-bottom: solid 1px rgba(255, 255, 255, 0.1); }\n\n.need {\n  opacity: .6; }\n\n.flex {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex; }\n\n.text {\n  padding-top: 32px; }\n  .text h1 {\n    margin-bottom: 10px; }\n\n.town {\n  margin: 20px 0 0 0; }\n\n.menu-btn {\n  display: none;\n  position: fixed;\n  left: 0;\n  bottom: 0;\n  width: 100%;\n  height: 40px;\n  border-radius: 3px;\n  text-align: center;\n  line-height: 40px;\n  z-index: 2;\n  cursor: pointer;\n  background: #e74c3c;\n  border-top: 1px solid rgba(255, 255, 255, 0.5); }\n\n::-webkit-scrollbar {\n  width: 10px; }\n\n/*定义滚动条轨道 内阴影+圆角*/\n::-webkit-scrollbar-track {\n  background-color: #e74c3c; }\n\n/*定义滑块 内阴影+圆角*/\n::-webkit-scrollbar-thumb {\n  background-color: rgba(255, 255, 255, 0.7); }\n\n@media screen and (max-width: 500px) {\n  body {\n    padding: 0 20px 60px; }\n  .menu {\n    position: fixed;\n    background: #e74c3c;\n    width: 100%;\n    height: 100%;\n    left: 0;\n    top: 0;\n    display: none;\n    z-index: 2; }\n    .menu .nav {\n      width: auto;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-pack: center;\n          -ms-flex-pack: center;\n              justify-content: center; }\n  .active {\n    display: block; }\n  .menu-btn {\n    display: block; }\n  table {\n    font-size: 12px; } }\n", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\nhtml {\n  position: relative; }\n\n* {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box; }\n\nbody {\n  margin: 0;\n  padding: 0;\n  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;\n  background: #7ad05e;\n  color: #fff; }\n\nul,\nol,\ndl {\n  padding: 0;\n  margin: 0; }\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\np {\n  margin-top: 0; }\n\na img {\n  border: none; }\n\np {\n  margin: 0;\n  padding: 0;\n  word-break: break-all; }\n\nh1 {\n  margin: 0;\n  padding: 0;\n  font-size: 1rem; }\n\nh2,\nh3,\nh4 {\n  margin: 0;\n  padding: 0; }\n\nh4 {\n  margin-top: 8px; }\n\nform {\n  margin: 0;\n  padding: 0; }\n\ninput,\nselect {\n  outline: none; }\n\na {\n  cursor: pointer;\n  text-decoration: none; }\n\ntextarea {\n  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;\n  resize: none; }\n\ninput,\nbutton,\nselect,\ntextarea {\n  outline: none; }\n\nbutton {\n  border: 0;\n  border-radius: 0;\n  background-color: transparent;\n  cursor: pointer;\n  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif; }\n\nhr {\n  border: 0;\n  margin: 0 auto; }\n\nul {\n  list-style: none; }\n\ntable {\n  table-layout: fixed;\n  border-collapse: collapse; }\n\nth {\n  text-align: left;\n  padding: 6px 12px 6px 0;\n  font-weight: 500; }\n\ntd {\n  padding: 6px 12px 6px 0;\n  color: #fff;\n  border-bottom: solid 1px rgba(255, 255, 255, 0.1); }\n\n.need {\n  opacity: .6; }\n\n.flex {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex; }\n\n.text {\n  padding-top: 32px; }\n  .text h1 {\n    margin-bottom: 10px; }\n\n.town {\n  margin: 20px 0 0 0; }\n\n.menu-btn {\n  display: none;\n  position: fixed;\n  left: 0;\n  bottom: 0;\n  width: 100%;\n  height: 40px;\n  border-radius: 3px;\n  text-align: center;\n  line-height: 40px;\n  z-index: 2;\n  cursor: pointer;\n  background: #7ad05e;\n  border-top: 1px solid rgba(255, 255, 255, 0.5); }\n\n::-webkit-scrollbar {\n  width: 10px; }\n\n/*定义滚动条轨道 内阴影+圆角*/\n::-webkit-scrollbar-track {\n  background-color: #7ad05e; }\n\n/*定义滑块 内阴影+圆角*/\n::-webkit-scrollbar-thumb {\n  background-color: rgba(255, 255, 255, 0.7); }\n\n@media screen and (max-width: 500px) {\n  body {\n    padding: 0 20px 60px; }\n  .menu {\n    position: fixed;\n    background: #7ad05e;\n    width: 100%;\n    height: 100%;\n    left: 0;\n    top: 0;\n    display: none;\n    z-index: 2; }\n    .menu .nav {\n      width: auto;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-pack: center;\n          -ms-flex-pack: center;\n              justify-content: center; }\n  .active {\n    display: block; }\n  .menu-btn {\n    display: block; }\n  table {\n    font-size: 12px; } }\n", ""]);
 
 // exports
 
