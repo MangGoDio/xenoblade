@@ -1612,13 +1612,14 @@ var App = function (_React$Component) {
     _createClass(App, [{
         key: 'changeMenu',
         value: function changeMenu(menu) {
-            this.setState({ menu: menu, name: '' });
+            if (menu === this.state.menu) return;
+            this.setState({ menu: menu, name: '', type: '' });
             if (menu === 'all') this.setState({ show: false });
         }
     }, {
         key: 'onSelect',
         value: function onSelect(name, type) {
-            this.setState({ name: name, type: type, show: false });
+            this.setState({ name: name, type: type || '', show: false });
         }
     }, {
         key: 'toggleMenu',
@@ -19008,7 +19009,12 @@ var Menu = exports.Menu = function Menu(props) {
                 return _react2.default.createElement(Li, { key: index, item: item, changeMenu: props.changeMenu });
             })
         ),
-        props.menu !== 'all' && _react2.default.createElement(_select.Select, { type: props.menu, onSelect: props.onSelect })
+        props.menu !== 'all' && _react2.default.createElement(_select.Select, { type: props.menu, onSelect: props.onSelect }),
+        _react2.default.createElement(
+            'p',
+            { style: { marginTop: '20px' } },
+            '*\u6DF1\u8272\u6587\u5B57\u4E3A\u4F63\u5175\u56E2\u4EFB\u52A1\u89E3\u9501'
+        )
     );
 };
 
@@ -19440,7 +19446,7 @@ exports = module.exports = __webpack_require__(16)(undefined);
 
 
 // module
-exports.push([module.i, ".menu .nav {\n  width: 200px;\n  margin: 20px;\n  text-align: center;\n  font-size: 18px; }\n  .menu .nav > li {\n    padding: 10px;\n    cursor: pointer; }\n    .menu .nav > li:hover {\n      background: #c0392b; }\n\n.select {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  width: 240px;\n  padding: 0 20px;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  -webkit-box-pack: start;\n      -ms-flex-pack: start;\n          justify-content: flex-start; }\n  .select > li {\n    padding: 3px 10px;\n    margin: 2px;\n    font-size: 14px;\n    background: rgba(255, 255, 255, 0.15);\n    cursor: pointer; }\n    .select > li:hover {\n      background: #c0392b; }\n\n@media screen and (max-width: 500px) {\n  .select {\n    width: 100%; }\n    .select > li {\n      padding: 4px 10px;\n      margin: 4px; } }\n", ""]);
+exports.push([module.i, ".menu {\n  padding: 0 20px; }\n  .menu .nav {\n    width: 240px;\n    margin: 20px 0;\n    text-align: center;\n    font-size: 18px; }\n    .menu .nav > li {\n      padding: 10px;\n      cursor: pointer; }\n      .menu .nav > li:hover {\n        background: #c0392b; }\n\n.select {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  width: 240px;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  -webkit-box-pack: start;\n      -ms-flex-pack: start;\n          justify-content: flex-start; }\n  .select > li {\n    padding: 3px 10px;\n    margin: 2px;\n    font-size: 14px;\n    background: rgba(255, 255, 255, 0.15);\n    cursor: pointer; }\n    .select > li:hover {\n      background: #c0392b; }\n\n@media screen and (max-width: 500px) {\n  .select {\n    width: 100%; }\n    .select > li {\n      padding: 4px 10px;\n      margin: 4px; } }\n", ""]);
 
 // exports
 

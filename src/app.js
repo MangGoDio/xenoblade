@@ -21,12 +21,13 @@ class App extends React.Component {
     }
 
     changeMenu(menu) {
-        this.setState({ menu, name: '' })
+        if (menu === this.state.menu) return
+        this.setState({ menu, name: '', type: '' })
         if (menu === 'all') this.setState({ show: false })
     }
 
     onSelect(name, type) {
-        this.setState({ name, type, show: false })
+        this.setState({ name, type: type || '', show: false })
     }
 
     toggleMenu() {

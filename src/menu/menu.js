@@ -14,6 +14,7 @@ export const Menu = props =>
             {config.map((item, index) => <Li key={index} item={item} changeMenu={props.changeMenu} />)}
         </ul>
         {props.menu !== 'all' && <Select type={props.menu} onSelect={props.onSelect} />}
+        <p style={{ marginTop: '20px' }}>*深色文字为佣兵团任务解锁</p>
     </div>
 
 const Li = props => {
