@@ -9,7 +9,7 @@ const config = [
 ]
 
 export const Menu = props =>
-    <div className='menu'>
+    <div className={`menu ${props.show && 'active'}`}>
         <ul className='nav'>
             {config.map((item, index) => <Li key={index} item={item} changeMenu={props.changeMenu} />)}
         </ul>

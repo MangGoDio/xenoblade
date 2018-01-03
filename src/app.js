@@ -13,22 +13,29 @@ class App extends React.Component {
             menu: 'blade',
             name: '',
             type: '',
+            show: false,
         }
         this.changeMenu = this.changeMenu.bind(this)
         this.onSelect = this.onSelect.bind(this)
+        this.toggleMenu = this.toggleMenu.bind(this)
     }
 
     changeMenu(menu) {
         this.setState({ menu, name: '' })
+        if (menu === 'all') this.setState({ show: false })
     }
 
     onSelect(name, type) {
-        this.setState({ name, type })
+        this.setState({ name, type, show: false })
+    }
+
+    toggleMenu() {
+        this.setState({ show: !this.state.show })
     }
 
     render() {
-
-        const { menu, name, type } = this.state,
+        console.log(this.state)
+        const { menu, name, type, show } = this.state,
             Content = (() => {
                 switch (menu) {
                     case 'all':
@@ -45,7 +52,8 @@ class App extends React.Component {
 
         return (
             <div className='flex'>
-                <Menu menu={menu} changeMenu={this.changeMenu} onSelect={this.onSelect} />
+                <Menu menu={menu} changeMenu={this.changeMenu} onSelect={this.onSelect} show={show} />
+                <div className='menu-btn' onClick={this.toggleMenu}>菜单</div>
                 <Content menu={menu} />
             </div>
         )
