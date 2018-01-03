@@ -13,7 +13,6 @@ export const All = props => {
                     <th>类别</th>
                     <th>名称</th>
                     <th>异刃</th>
-                    <th>说明</th>
                 </tr>
             </thead>
             <tbody>
@@ -29,7 +28,6 @@ const Tr = props =>
         <td>{props.item.class}</td>
         <td>{props.item.name}</td>
         <td>{props.item.blade}</td>
-        <td>{props.item.desc}</td>
     </tr>
 
 

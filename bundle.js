@@ -19598,11 +19598,6 @@ var All = exports.All = function All(props) {
                     'th',
                     null,
                     '\u5F02\u5203'
-                ),
-                _react2.default.createElement(
-                    'th',
-                    null,
-                    '\u8BF4\u660E'
                 )
             )
         ),
@@ -19639,11 +19634,6 @@ var Tr = function Tr(props) {
             'td',
             null,
             props.item.blade
-        ),
-        _react2.default.createElement(
-            'td',
-            null,
-            props.item.desc
         )
     );
 };
@@ -19838,7 +19828,7 @@ exports = module.exports = __webpack_require__(16)(undefined);
 
 
 // module
-exports.push([module.i, "@charset \"UTF-8\";\nhtml {\n  position: relative; }\n\n* {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box; }\n\nbody {\n  margin: 0;\n  padding: 0;\n  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;\n  background: #e74c3c;\n  color: #fff; }\n\nul,\nol,\ndl {\n  padding: 0;\n  margin: 0; }\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\np {\n  margin-top: 0; }\n\na img {\n  border: none; }\n\np {\n  margin: 0;\n  padding: 0;\n  word-break: break-all; }\n\nh1 {\n  margin: 0;\n  padding: 0;\n  font-size: 1rem; }\n\nh2,\nh3,\nh4 {\n  margin: 0;\n  padding: 0; }\n\nh4 {\n  margin-top: 8px; }\n\nform {\n  margin: 0;\n  padding: 0; }\n\ninput,\nselect {\n  outline: none; }\n\na {\n  cursor: pointer;\n  text-decoration: none; }\n\ntextarea {\n  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;\n  resize: none; }\n\ninput,\nbutton,\nselect,\ntextarea {\n  outline: none; }\n\nbutton {\n  border: 0;\n  border-radius: 0;\n  background-color: transparent;\n  cursor: pointer;\n  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif; }\n\nhr {\n  border: 0;\n  margin: 0 auto; }\n\nul {\n  list-style: none; }\n\ntable {\n  table-layout: fixed;\n  border-collapse: collapse; }\n\nth {\n  text-align: left;\n  padding: 6px 12px 6px 0;\n  font-weight: 500; }\n\ntd {\n  padding: 6px 12px 6px 0;\n  color: #fff;\n  border-bottom: solid 1px rgba(255, 255, 255, 0.1); }\n\n.need {\n  opacity: .6; }\n\n.flex {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex; }\n\n.text {\n  padding-top: 32px; }\n  .text h1 {\n    margin-bottom: 10px; }\n\n.town {\n  margin: 20px 0 0 0; }\n\n.menu-btn {\n  display: none;\n  position: fixed;\n  left: 0;\n  bottom: 0;\n  width: 100%;\n  height: 40px;\n  border-radius: 3px;\n  text-align: center;\n  line-height: 40px;\n  z-index: 2;\n  cursor: pointer;\n  background: #e74c3c;\n  border-top: 1px solid rgba(255, 255, 255, 0.5); }\n\n::-webkit-scrollbar {\n  width: 10px; }\n\n/*定义滚动条轨道 内阴影+圆角*/\n::-webkit-scrollbar-track {\n  background-color: #e74c3c; }\n\n/*定义滑块 内阴影+圆角*/\n::-webkit-scrollbar-thumb {\n  background-color: rgba(255, 255, 255, 0.7); }\n\n@media screen and (max-width: 500px) {\n  body {\n    padding: 0 20px 60px; }\n  .menu {\n    position: fixed;\n    background: #e74c3c;\n    width: 100%;\n    height: 100%;\n    left: 0;\n    top: 0;\n    opacity: 0;\n    z-index: 2; }\n    .menu .nav {\n      width: auto;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-pack: center;\n          -ms-flex-pack: center;\n              justify-content: center; }\n  .active {\n    opacity: 1; }\n  .menu-btn {\n    display: block; } }\n", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\nhtml {\n  position: relative; }\n\n* {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box; }\n\nbody {\n  margin: 0;\n  padding: 0;\n  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;\n  background: #e74c3c;\n  color: #fff; }\n\nul,\nol,\ndl {\n  padding: 0;\n  margin: 0; }\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\np {\n  margin-top: 0; }\n\na img {\n  border: none; }\n\np {\n  margin: 0;\n  padding: 0;\n  word-break: break-all; }\n\nh1 {\n  margin: 0;\n  padding: 0;\n  font-size: 1rem; }\n\nh2,\nh3,\nh4 {\n  margin: 0;\n  padding: 0; }\n\nh4 {\n  margin-top: 8px; }\n\nform {\n  margin: 0;\n  padding: 0; }\n\ninput,\nselect {\n  outline: none; }\n\na {\n  cursor: pointer;\n  text-decoration: none; }\n\ntextarea {\n  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;\n  resize: none; }\n\ninput,\nbutton,\nselect,\ntextarea {\n  outline: none; }\n\nbutton {\n  border: 0;\n  border-radius: 0;\n  background-color: transparent;\n  cursor: pointer;\n  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif; }\n\nhr {\n  border: 0;\n  margin: 0 auto; }\n\nul {\n  list-style: none; }\n\ntable {\n  table-layout: fixed;\n  border-collapse: collapse; }\n\nth {\n  text-align: left;\n  padding: 6px 12px 6px 0;\n  font-weight: 500; }\n\ntd {\n  padding: 6px 12px 6px 0;\n  color: #fff;\n  border-bottom: solid 1px rgba(255, 255, 255, 0.1); }\n\n.need {\n  opacity: .6; }\n\n.flex {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex; }\n\n.text {\n  padding-top: 32px; }\n  .text h1 {\n    margin-bottom: 10px; }\n\n.town {\n  margin: 20px 0 0 0; }\n\n.menu-btn {\n  display: none;\n  position: fixed;\n  left: 0;\n  bottom: 0;\n  width: 100%;\n  height: 40px;\n  border-radius: 3px;\n  text-align: center;\n  line-height: 40px;\n  z-index: 2;\n  cursor: pointer;\n  background: #e74c3c;\n  border-top: 1px solid rgba(255, 255, 255, 0.5); }\n\n::-webkit-scrollbar {\n  width: 10px; }\n\n/*定义滚动条轨道 内阴影+圆角*/\n::-webkit-scrollbar-track {\n  background-color: #e74c3c; }\n\n/*定义滑块 内阴影+圆角*/\n::-webkit-scrollbar-thumb {\n  background-color: rgba(255, 255, 255, 0.7); }\n\n@media screen and (max-width: 500px) {\n  body {\n    padding: 0 20px 60px; }\n  .menu {\n    position: fixed;\n    background: #e74c3c;\n    width: 100%;\n    height: 100%;\n    left: 0;\n    top: 0;\n    display: none;\n    z-index: 2; }\n    .menu .nav {\n      width: auto;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-pack: center;\n          -ms-flex-pack: center;\n              justify-content: center; }\n  .active {\n    display: block; }\n  .menu-btn {\n    display: block; }\n  table {\n    font-size: 12px; } }\n", ""]);
 
 // exports
 

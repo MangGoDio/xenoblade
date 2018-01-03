@@ -183,7 +183,7 @@ td {
         height: 100%;
         left: 0;
         top: 0;
-        opacity: 0;
+        display: none;
         z-index: 2;
         .nav {
             width: auto;
@@ -192,9 +192,12 @@ td {
         }
     }
     .active {
-        opacity: 1;
+        display: block;
     }
     .menu-btn {
         display: block;
+    }
+    table {
+        font-size: 12px;
     }
 }
